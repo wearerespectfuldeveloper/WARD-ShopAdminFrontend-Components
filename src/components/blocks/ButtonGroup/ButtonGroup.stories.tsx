@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonGroup from './ButtonGroup';
 import Button from '../../units/Button/Button';
+import Icon from '../../design-tokens/SVGIcon/SVGIcon';
 import { withKnobs, text, radios, boolean } from '@storybook/addon-knobs';
 
 export default {
@@ -63,5 +64,41 @@ export const customGapColumn = () => {
       <Button>CLICK ME</Button>
       <Button>CLICK ME</Button>
     </ButtonGroup>
+  );
+};
+
+export const withIcon = () => {
+  return (
+    <div>
+      <ButtonGroup>
+        <Button size="small">
+          <Icon icon="heart" /> LIKE
+        </Button>
+        <Button>
+          <Icon icon="heart" /> LIKE
+        </Button>
+        <Button size="big">
+          <Icon icon="heart" /> LIKE
+        </Button>
+      </ButtonGroup>
+    </div>
+  );
+};
+
+export const iconOnly = () => {
+  return (
+    <div>
+      <ButtonGroup>
+        <Button iconOnly size="small">
+          <Icon icon="heart" />
+        </Button>
+        <Button iconOnly>
+          <Icon icon="heart" />
+        </Button>
+        <Button iconOnly size="big">
+          <Icon icon="heart" />
+        </Button>
+      </ButtonGroup>
+    </div>
   );
 };

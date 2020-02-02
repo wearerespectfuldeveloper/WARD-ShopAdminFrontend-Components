@@ -14,12 +14,17 @@ type ButtonProps = {
   disabled?: boolean;
   /** 버튼의 너비를 임의로 설정합니다. */
   width?: string | number;
+  /** 버튼에서 아이콘만 보여줄 때 이 값을 `true`로 설정하세요. */
+  iconOnly?: boolean;
 };
 
 const themes = {
   primary: css`
     background: #20c997;
     color: white;
+    svg {
+      fill: white;
+    }
     &:hover:enabled {
       background: #38d9a9;
     }
@@ -33,6 +38,9 @@ const themes = {
   secondary: css`
     background: #e9ecef;
     color: #343a40;
+    svg {
+      fill: #343a40;
+    }
     &:hover:enabled {
       background: #f1f3f5;
     }
@@ -41,11 +49,17 @@ const themes = {
     }
     &:disabled {
       color: #c6d3e1;
+      svg {
+        fill: #c6d3e1;
+      }
     }
   `,
   tertiary: css`
     background: none;
     color: #20c997;
+    svg {
+      fill: #20c997;
+    }
     &:hover:enabled {
       background: #e6fcf5;
     }
@@ -54,6 +68,9 @@ const themes = {
     }
     &:disabled {
       color: #bcd9d0;
+      svg {
+        fill: #bcd9d0;
+      }
     }
   `
 };
@@ -76,11 +93,45 @@ const sizes = {
   `
 };
 
+const iconOnlyStyle = css`
+  padding: 0;
+  border-radius: 50%;
+  svg {
+    margin: 0;
+  }
+`;
+
+const iconOnlySizes = {
+  small: css`
+    width: 1.75rem;
+  `,
+  medium: css`
+    width: 2.5rem;
+  `,
+  big: css`
+    width: 3rem;
+  `
+};
+
 /** `Button` 컴포넌트는 어떠한 작업을 트리거 할 때 사용합니다.  */
-const Button = ({ children, theme, size, disabled, width, onClick }: ButtonProps) => {
+const Button = ({ 
+  children, 
+  theme, 
+  size, 
+  disabled, 
+  width, 
+  iconOnly, 
+  onClick 
+}: ButtonProps) => {
   return (
     <button 
-      css={[style, themes[theme], sizes[size], { width }]}
+      css={[
+        style, 
+        themes[theme], 
+        sizes[size], 
+        { width },
+        iconOnly && [iconOnlyStyle, iconOnlySizes[size]]
+      ]}
       disabled={disabled} 
       onClick={onClick}
     >
@@ -112,6 +163,10 @@ const style = css`
   }
   &:disabled {
     cursor: not-allowed;
+  }
+  svg {
+    width: 1em;
+    margin-right: 1em;
   }
 `;
 
