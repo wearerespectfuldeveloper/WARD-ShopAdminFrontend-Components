@@ -7,17 +7,17 @@ export default {
   title: 'Design ToKen|Icon'
 };
 
-export const icon = () => <Icon icon="heart" />;
+export const icon = () => <Icon icon="dashboard" />;
 icon.story = {
   name: 'Default'
 };
 
-export const customSize = () => <Icon icon="heart" size="4rem" />;
+export const customSize = () => <Icon icon="dashboard" size="4rem" />;
 
-export const customColor = () => <Icon icon="heart" color="red" />;
+export const customColor = () => <Icon icon="dashboard" color="red" />;
 
 export const customizedWithStyle = () => (
-  <Icon icon="heart" css={{ color: 'red', width: '4rem' }} />
+  <Icon icon="dashboard" color="red" size="4rem" />
 );
 
 export const listOfIcons = () => {

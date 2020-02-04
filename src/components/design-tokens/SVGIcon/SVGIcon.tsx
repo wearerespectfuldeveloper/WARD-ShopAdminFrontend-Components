@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
 import * as icons from '../../../assets/icons/svg';
 
 type IconType = keyof typeof icons;
@@ -23,9 +23,14 @@ export type IconProps = {
  */
 const Icon = ({ icon, color, size, className }: IconProps) => {
   const SVGIcon = icons[icon];
+  const iconColor = css`
+  path {
+    fill: ${color};
+  }
+`;
   return (
     <SVGIcon
-      css={{ fill: color || 'currentColor', width: size, height: 'auto' }}
+      css={[{ width: size, height: 'auto' }, iconColor]}
       className={className}
     />
   );

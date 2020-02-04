@@ -43,8 +43,8 @@ export const rightAlign = () => {
 export const column = () => {
   return (
     <ButtonGroup direction="column">
-      <Button>CLICK ME</Button>
-      <Button>CLICK ME</Button>
+      <Button>클릭하기</Button>
+      <Button>클릭하기</Button>
     </ButtonGroup>
   );
 };
@@ -61,8 +61,8 @@ export const customGap = () => {
 export const customGapColumn = () => {
   return (
     <ButtonGroup direction="column" gap="1rem">
-      <Button>CLICK ME</Button>
-      <Button>CLICK ME</Button>
+      <Button>클릭하기</Button>
+      <Button>클릭하기</Button>
     </ButtonGroup>
   );
 };
@@ -72,13 +72,13 @@ export const withIcon = () => {
     <div>
       <ButtonGroup>
         <Button size="small">
-          <Icon icon="heart" /> LIKE
+          <Icon icon="heart" /> 좋아요
         </Button>
         <Button>
-          <Icon icon="heart" /> LIKE
+          <Icon icon="heart" /> 좋아요
         </Button>
         <Button size="big">
-          <Icon icon="heart" /> LIKE
+          <Icon icon="heart" /> 좋아요
         </Button>
       </ButtonGroup>
     </div>

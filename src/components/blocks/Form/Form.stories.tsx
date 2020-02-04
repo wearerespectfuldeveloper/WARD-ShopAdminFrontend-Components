@@ -107,7 +107,7 @@ export const signInForm = () => {
 export const signUpForm = () => {
   const width = text('width', '100%');
   const title = text('title', 'WARD');
-  const subTitle = text('subTitle', 'We Are Resfectful Developers');
+  const subTitle = text('subTitle', '회원 정보를 입력해주세요');
 
   const bodyElements = (
     <Fragment>
