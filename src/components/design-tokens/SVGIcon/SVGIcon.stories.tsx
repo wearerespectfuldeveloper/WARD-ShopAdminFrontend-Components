@@ -4,7 +4,7 @@ import Icon, { iconTypes } from './SVGIcon';
 
 export default {
   component: Icon,
-  title: 'components|Icon'
+  title: 'Design ToKen|Icon'
 };
 
 export const icon = () => <Icon icon="heart" />;

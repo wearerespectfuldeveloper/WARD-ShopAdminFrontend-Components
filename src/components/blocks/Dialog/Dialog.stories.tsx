@@ -3,7 +3,7 @@ import Dialog from './Dialog';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 export default {
-  title: 'components|Dialog',
+  title: 'Block|Dialog',
   component: Dialog,
   parameters: {
     docs: {

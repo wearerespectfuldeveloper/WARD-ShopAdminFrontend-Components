@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 
 
 export default {
-  title: 'components|SideBar',
+  title: 'Block|SideBar',
   component: SideBar,
   decorators: [withKnobs]
 };
@@ -22,6 +22,9 @@ export const sideBar = () => {
 
   return (
     <SideBar
+      mode={mode}
+      width={width}
+      toggled={toggled}
     >
     </SideBar>
   );

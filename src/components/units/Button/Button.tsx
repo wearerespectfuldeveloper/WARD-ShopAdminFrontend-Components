@@ -18,25 +18,45 @@ type ButtonProps = {
   iconOnly?: boolean;
 };
 
+
+const style = css`
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+  &:focus {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+  svg {
+    width: 1rem;
+    margin-right: 1rem;
+  }
+`;
+
+
 const themes = {
   primary: css`
-    background: #20c997;
+    background-color: #43425D;
+    border: none;
     color: white;
     svg {
       fill: white;
     }
     &:hover:enabled {
-      background: #38d9a9;
+      background-color: #43425D;
     }
     &:active:enabled {
-      background: #12b886;
+      background-color: #43425D;
     }
     &:disabled {
-      background: #aed9cc;
+      background-color: #c6c6ce;
     }
   `,
   secondary: css`
-    background: #e9ecef;
+    background-color: white;
+    border: 1px solid #43425D;
     color: #343a40;
     svg {
       fill: #343a40;
@@ -48,28 +68,22 @@ const themes = {
       background: #dee2e6;
     }
     &:disabled {
-      color: #c6d3e1;
+      color: #c6c6ce;
       svg {
-        fill: #c6d3e1;
+        fill: #c6c6ce;
       }
     }
   `,
   tertiary: css`
     background: none;
-    color: #20c997;
+    color: #43425D;
     svg {
-      fill: #20c997;
-    }
-    &:hover:enabled {
-      background: #e6fcf5;
-    }
-    &:active:enabled {
-      background: #c3fae8;
+      fill: #43425D;
     }
     &:disabled {
-      color: #bcd9d0;
+      color: #c6c6ce;
       svg {
-        fill: #bcd9d0;
+        fill: #c6c6ce;
       }
     }
   `
@@ -79,12 +93,12 @@ const sizes = {
   small: css`
     height: 1.75rem;
     font-size: 0.75rem;
-    padding: 0 0.875rem;
+    padding: 0.25rem 1.0625rem;
   `,
   medium: css`
     height: 2.5rem;
     font-size: 1rem;
-    padding: 0 1rem;
+    padding: 0.5rem 3.875rem 0.5rem 3.875rem;
   `,
   big: css`
     height: 3rem;
@@ -103,13 +117,13 @@ const iconOnlyStyle = css`
 
 const iconOnlySizes = {
   small: css`
-    width: 1.75rem;
+    padding: 0.75rem 3.875rem 0.875rem;
   `,
   medium: css`
-    width: 2.5rem;
+    padding: 0.75rem 3.875rem 0.875rem;
   `,
   big: css`
-    width: 3rem;
+    padding: 0.75rem 3.875rem 0.875rem;
   `
 };
 
@@ -144,30 +158,5 @@ Button.defaultProps = {
   theme: 'primary',
   size: 'medium'
 };
-
-const style = css`
-  outline: none;
-  border: none;
-  box-sizing: border-box;
-  height: 2rem;
-  font-size: 0.875rem;
-  padding: 0 1rem;
-  border-radius: 0.25rem;
-  line-height: 1;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  &:focus {
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-  }
-  &:disabled {
-    cursor: not-allowed;
-  }
-  svg {
-    width: 1em;
-    margin-right: 1em;
-  }
-`;
 
 export default Button;
