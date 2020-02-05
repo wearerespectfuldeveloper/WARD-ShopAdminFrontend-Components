@@ -1,20 +1,36 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import Icon, { iconTypes } from './SVGIcon';
+import { withKnobs, text, radios, color, select } from '@storybook/addon-knobs';
 
 export default {
   component: Icon,
-  title: 'Design ToKen|Icon'
+  title: 'Design ToKen|Icon',
+  decorators: [withKnobs]
 };
 
-export const icon = () => <Icon icon="dashboard" />;
+export const icon = () => {
+
+  const icon = select('icon', iconTypes, 'products');
+  const size = text('size', '1rem');
+  const iconColor = color('color', '');
+  const bgColor = color('bgColor', '');
+
+  return <Icon icon={icon} size={size} color={iconColor} bgColor={bgColor}/>;
+
+} 
 icon.story = {
   name: 'Default'
 };
 
-export const customSize = () => <Icon icon="dashboard" size="4rem" />;
+export const customSize = () => {
+  return <Icon icon="dashboard" size="4rem" />;
+} 
+  
 
-export const customColor = () => <Icon icon="dashboard" color="red" />;
+export const customColor = () => {
+  return <Icon icon="dashboard" color="red" />;
+}
 
 export const customizedWithStyle = () => (
   <Icon icon="dashboard" color="red" size="4rem" />

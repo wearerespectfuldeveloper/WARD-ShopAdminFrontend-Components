@@ -69,6 +69,7 @@ const themes = {
       background: #dee2e6;
     }
     &:disabled {
+      border: 1px solid #c6c6ce;
       color: #c6c6ce;
       svg {
         fill: #c6c6ce;

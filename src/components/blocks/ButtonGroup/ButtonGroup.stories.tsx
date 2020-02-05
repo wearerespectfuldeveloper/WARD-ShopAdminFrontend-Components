@@ -72,13 +72,13 @@ export const withIcon = () => {
     <div>
       <ButtonGroup>
         <Button size="small">
-          <Icon icon="heart" /> 좋아요
+          <Icon icon="customers" /> 좋아요
         </Button>
         <Button>
-          <Icon icon="heart" /> 좋아요
+          <Icon icon="customers" /> 좋아요
         </Button>
         <Button size="big">
-          <Icon icon="heart" /> 좋아요
+          <Icon icon="customers" /> 좋아요
         </Button>
       </ButtonGroup>
     </div>
@@ -90,13 +90,13 @@ export const iconOnly = () => {
     <div>
       <ButtonGroup>
         <Button iconOnly size="small">
-          <Icon icon="heart" />
+          <Icon icon="customers" />
         </Button>
         <Button iconOnly>
-          <Icon icon="heart" />
+          <Icon icon="customers" />
         </Button>
         <Button iconOnly size="big">
-          <Icon icon="heart" />
+          <Icon icon="customers" />
         </Button>
       </ButtonGroup>
     </div>

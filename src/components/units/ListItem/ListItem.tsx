@@ -45,11 +45,7 @@ const themes = {
     }
   `,
   light: css`
-    background-color: #ffffff;
     color: #4d4f5c;
-    &:hover {
-      background-color: #eee;
-    }
   `
 };
 

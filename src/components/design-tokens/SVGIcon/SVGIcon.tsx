@@ -12,7 +12,10 @@ export type IconProps = {
   color?: string;
   /** 아이콘 크기 */
   size?: string | number;
+  /** 따로 집어넣을 클래스 */
   className?: string;
+  /** 둥근 배경 테두리 색상. 값을 넣을 시 적용됨 */
+  bgColor?: string;
 };
 
 /** 아이콘을 보여주고 싶을 땐 `Icon` 컴포넌트를 사용하세요.
@@ -21,16 +24,27 @@ export type IconProps = {
  *
  * 스타일로 모양새를 설정 할 때에는 `color`로 색상을 설정하고 `width`로 크기를 설정하세요.
  */
-const Icon = ({ icon, color, size, className }: IconProps) => {
+const Icon = ({ icon, color, size, className, bgColor }: IconProps) => {
+
+  let bg;
+
+  if (bgColor) {
+    bg = css`
+      padding: 11px;
+      border: 1px solid ${bgColor};
+      border-radius: 10px;
+    `
+  }
+
   const SVGIcon = icons[icon];
   const iconColor = css`
-  path {
-    fill: ${color};
-  }
-`;
+    path {
+      fill: ${color};
+    }
+  `;
   return (
     <SVGIcon
-      css={[{ width: size, height: 'auto' }, iconColor]}
+      css={[{ width: size, height: 'auto' }, iconColor, bg]}
       className={className}
     />
   );
