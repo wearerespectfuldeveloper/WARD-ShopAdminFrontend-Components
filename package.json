@@ -16,6 +16,7 @@
     "@storybook/addon-docs": "^5.3.8",
     "@storybook/addon-knobs": "^5.3.8",
     "@storybook/addon-links": "^5.3.6",
+    "@storybook/addon-viewport": "^5.3.12",
     "@storybook/addons": "^5.3.6",
     "@storybook/react": "^5.3.6",
     "@svgr/rollup": "^5.1.0",

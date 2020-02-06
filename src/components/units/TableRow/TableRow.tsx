@@ -10,7 +10,18 @@ type TableRowProps = {
 
 const TableRow = ({ type, cellList }: TableRowProps) => {
   const style = css`
-
+    display: flex;
+    justify-content: space-between;
+    th {
+      padding: 0.75rem 1.875rem;
+      text-align: center;
+      width: ${100 / cellList.length}%;
+    }
+    td {
+      padding: 1.25rem 1.875rem;
+      text-align: center;
+      width: ${100 / cellList.length}%;
+    }
   `;
 
   let typeStyle;
@@ -19,20 +30,24 @@ const TableRow = ({ type, cellList }: TableRowProps) => {
   if (type === "head") {
     typeStyle = css`
       background-color: #F5F6FA;
+      color: #A3A6B4;
     `;
     RowItems = cellList.map(item => {
       return <th>{item.text}</th>;
     });
   } else {
     typeStyle = css`
-    
+      border-bottom: 1px solid #F1F1F3;
+      &:hover {
+        background-color: rgba(241, 241, 243, 0.5);
+      }
     `;
     RowItems = cellList.map(item => {
       return <td>{item.text}</td>;
     });
   }
 
-  return <tr>{RowItems}</tr>;
+  return <tr css={[style, typeStyle]}>{RowItems}</tr>;
 };
 
 TableRow.defaultProps = {
