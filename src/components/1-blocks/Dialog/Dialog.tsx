@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { css, jsx } from "@emotion/core";
 import { useTransition, animated } from "react-spring";
 import ButtonGroup from "../ButtonGroup/ButtonGroup";
-import Button from "../../units/Button/Button";
+import Button from "../../2-units/Button/Button";
 
 export type DialogProps = {
   visible: boolean;

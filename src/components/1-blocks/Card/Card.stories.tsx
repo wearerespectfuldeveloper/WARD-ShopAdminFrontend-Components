@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
-import ListItem from "../../units/ListItem/ListItem";
-import Icon from "../../design-tokens/SVGIcon/SVGIcon";
+import ListItem from "../../2-units/ListItem/ListItem";
+import Icon from "../../3-design-tokens/SVGIcon/SVGIcon";
 import { jsx, css } from "@emotion/core";
 
 import {

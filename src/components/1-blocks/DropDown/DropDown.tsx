@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import Icon from '../../design-tokens/SVGIcon/SVGIcon'
+import Icon from '../../3-design-tokens/SVGIcon/SVGIcon'
 
 type DropDownProps = {
   /** 드랍다운의 너비를 임의로 설정 */

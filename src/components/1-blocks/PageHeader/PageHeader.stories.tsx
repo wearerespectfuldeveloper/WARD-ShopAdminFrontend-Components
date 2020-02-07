@@ -1,6 +1,6 @@
 import React from 'react';
 import PageHeader from './PageHeader';
-import Icon from '../../design-tokens/SVGIcon/SVGIcon'
+import Icon from '../../3-design-tokens/SVGIcon/SVGIcon'
 import { withKnobs, text, radios, boolean } from '@storybook/addon-knobs';
 
 export default {

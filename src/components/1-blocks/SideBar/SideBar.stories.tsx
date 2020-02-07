@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import SideBar from "./SideBar";
-import ListItem from "../../units/ListItem/ListItem";
-import Icon from "../../design-tokens/SVGIcon/SVGIcon";
+import ListItem from "../../2-units/ListItem/ListItem";
+import Icon from "../../3-design-tokens/SVGIcon/SVGIcon";
 
 import { jsx, css } from "@emotion/core";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";

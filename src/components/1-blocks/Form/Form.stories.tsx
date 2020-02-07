@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import Form from './Form';
-import InputComponent from '../../units/Input/Input';
-import Button from '../../units/Button/Button';
-import ButtonGroup from '../../blocks/ButtonGroup/ButtonGroup';
+import InputComponent from '../../2-units/Input/Input';
+import Button from '../../2-units/Button/Button';
+import ButtonGroup from '../../1-blocks/ButtonGroup/ButtonGroup';
 import { withKnobs, text, radios, boolean } from '@storybook/addon-knobs';
 
 export default {

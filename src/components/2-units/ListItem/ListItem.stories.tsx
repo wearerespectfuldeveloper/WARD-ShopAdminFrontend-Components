@@ -1,6 +1,6 @@
 import React from 'react';
 import ListItem from './ListItem';
-import Icon from '../../design-tokens/SVGIcon/SVGIcon';
+import Icon from '../../3-design-tokens/SVGIcon/SVGIcon';
 
 import { withKnobs, text, radios, boolean, select } from '@storybook/addon-knobs';
 
