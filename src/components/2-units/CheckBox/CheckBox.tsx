@@ -58,7 +58,7 @@ const CheckBox = ({
     #${id} + label::after {
       content: "";
       position: absolute;
-      background: url(${require("./check.svg")}) no-repeat center;
+      background: url(${require("../../../assets/icons/svg/check.svg")}) no-repeat center;
       background-size: 0;
       transition: all 0.2s 0.2s;
     }
@@ -70,7 +70,7 @@ const CheckBox = ({
       left: -5px;
       width: 22px;
       height: 22px;
-      background: url(${require("./check.svg")}) no-repeat center;
+      background: url(${require("../../../assets/icons/svg/check.svg")}) no-repeat center;
       background-size: 15px auto;
     }
   `;

@@ -3,11 +3,10 @@ export { default as Icon } from './components/3-design-tokens/SVGIcon/SVGIcon';
 
 // UNIT
 export { default as Button } from './components/2-units/Button/Button';
-export { default as CheckBox } from './components/2-units/CheckBox/CheckBox';
 export { default as Input } from './components/2-units/Input/Input';
 export { default as ListItem } from './components/2-units/ListItem/ListItem';
 export { default as TableRow } from './components/2-units/TableRow/TableRow';
-
+// 체크박스에서 require로 svg를 못 불러옴 <- npm 라이브러리로 빌드된 상태에서는
 
 // BLOCK
 export { default as ButtonGroup } from './components/1-blocks/ButtonGroup/ButtonGroup';
