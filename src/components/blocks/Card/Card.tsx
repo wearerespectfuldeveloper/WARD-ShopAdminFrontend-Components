@@ -38,10 +38,14 @@ const Card = ({
     .card-header {
       display: flex;
       justify-content: space-between;
-      ${title
-        ? "border-bottom: 1px solid #eee; > h1 { margin: 0; padding-bottom: 1.4375rem; }"  
-        : ""
-        }
+      h1 {
+        margin: 0;
+      }
+      ${
+        title
+          ? "border-bottom: 1px solid #eee; > h1 { padding-bottom: 1.4375rem; }"
+          : ""
+      }
       }
     }
 
@@ -64,7 +68,7 @@ const Card = ({
     <div css={[style, { width, height }, elevations[elevation]]}>
       <div className="card-header">
         <h1>{title}</h1>
-        {sideContent}
+        <div>{sideContent}</div>
       </div>
       <div className="card-body">{children}</div>
     </div>

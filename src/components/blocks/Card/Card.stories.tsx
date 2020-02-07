@@ -10,7 +10,7 @@ import {
   radios,
   boolean,
   select,
-  color,
+  color
 } from "@storybook/addon-knobs";
 
 export default {
@@ -20,10 +20,10 @@ export default {
 };
 
 export const card = () => {
-  const title = text('title', '');
+  const title = text("title", "");
   const width = text("width", "500px");
   const radius = boolean("radius", false);
-  const backgroundColor = color('backgroundColor', '');
+  const backgroundColor = color("backgroundColor", "");
 
   const leading = (
     <Icon icon="moneyBag" color="#56D9FE" bgColor="#56D9FE"></Icon>
@@ -41,7 +41,12 @@ export const card = () => {
   );
 
   return (
-    <Card title={title} width={width} radius={radius} backgroundColor={backgroundColor}>
+    <Card
+      title={title}
+      width={width}
+      radius={radius}
+      backgroundColor={backgroundColor}
+    >
       <ListItem
         theme="light"
         border="none"

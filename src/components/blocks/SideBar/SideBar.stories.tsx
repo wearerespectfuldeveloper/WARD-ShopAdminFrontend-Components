@@ -10,6 +10,11 @@ import { action } from "@storybook/addon-actions";
 export default {
   title: "Block|SideBar",
   component: SideBar,
+  parameters: {
+    docs: {
+      inlineStories: false
+    }
+  },
   decorators: [withKnobs]
 };
 

@@ -8,7 +8,11 @@
     "/dist"
   ],
   "dependencies": {
-    "node-sass": "^4.13.1"
+    "@types/jest": "^25.1.1",
+    "@types/node": "^13.7.0",
+    "jest": "^25.1.0",
+    "node-sass": "^4.13.1",
+    "react-spring": "^8.0.27"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
@@ -16,13 +20,18 @@
     "@storybook/addon-docs": "^5.3.8",
     "@storybook/addon-knobs": "^5.3.8",
     "@storybook/addon-links": "^5.3.6",
+    "@storybook/addon-storyshots": "^5.3.12",
+    "@storybook/addon-storyshots-puppeteer": "^5.3.12",
     "@storybook/addon-viewport": "^5.3.12",
     "@storybook/addons": "^5.3.6",
     "@storybook/react": "^5.3.6",
     "@svgr/rollup": "^5.1.0",
+    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/react": "^9.4.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-named-asset-import": "^0.3.5",
     "babel-preset-react-app": "^9.1.0",
+    "puppeteer": "^2.1.1",
     "react-docgen-typescript-loader": "^3.6.0",
     "rollup": "^1.31.0",
     "rollup-plugin-babel": "^4.3.3",
@@ -36,7 +45,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "rollup -c",
-    "build:types": "tsc --emitDeclarationOnly"
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "jest --watchAll --verbose"
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.27",

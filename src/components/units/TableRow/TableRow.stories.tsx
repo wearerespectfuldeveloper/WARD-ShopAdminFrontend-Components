@@ -12,16 +12,15 @@ export const tableRow = () => {
   return (
     <TableRow
       cellList={[
-        {text: "테스트1"},
-        {text: "테스트2"},
-        {text: "테스트3"},
-        {text: "테스트4"},
-        {text: "테스트5"},
-
+        {data: ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80.com/photo-1526948128573-703ee1aeb6fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", "자바스크립트 티셔츠"], type: "picture"},
+        {data: "티셔츠", type: "text"},
+        {data: "29300", type: "price"},
+        {data: "0", type: "stock"},
+        {data: "2020-01-20", type: "date"},
       ]}
     />
-  )
-}
+  );
+};
 
 tableRow.story = {
   name: 'Default'
