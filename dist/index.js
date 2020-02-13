@@ -63,7 +63,7 @@ var _ref$2 =
 /*#__PURE__*/
 React.createElement("path", {
   d: "M6.5 10.8L0 4.3l2.1-2.1 4.4 4.3L13 0l2.1 2.1z",
-  fill: "#3b86ff"
+  fill: "#fff"
 });
 
 function SvgCheck(props) {
@@ -916,8 +916,48 @@ Dialog.defaultProps = {
   confirmText: "확인"
 };
 
+function _templateObject9$1() {
+  var data = _taggedTemplateLiteral(["\n      transform: translateX(-100vw);\n      * {\n        opacity: 0;\n      }\n    "]);
+
+  _templateObject9$1 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8$2() {
+  var data = _taggedTemplateLiteral(["\n      width: 0rem;\n      * {\n        opacity: 0;\n      }\n    "]);
+
+  _templateObject8$2 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7$2() {
+  var data = _taggedTemplateLiteral(["\n      transform: translateX(0rem);\n    "]);
+
+  _templateObject7$2 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6$2() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject6$2 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject5$3() {
-  var data = _taggedTemplateLiteral(["\n  width: 0rem;\n  * {\n    opacity: 0;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n      position: absolute;\n      transition: transform 1s;\n      * {\n        transition: opacity 0.2s 1s;\n      }\n    "]);
 
   _templateObject5$3 = function _templateObject5() {
     return data;
@@ -927,7 +967,7 @@ function _templateObject5$3() {
 }
 
 function _templateObject4$4() {
-  var data = _taggedTemplateLiteral(["\n  width: 16.25rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n      position: sticky;\n      transition: width 0.5s ease-out;\n      * {\n        transition: opacity 0.2s ease-out;\n      }\n    "]);
 
   _templateObject4$4 = function _templateObject4() {
     return data;
@@ -937,7 +977,7 @@ function _templateObject4$4() {
 }
 
 function _templateObject3$4() {
-  var data = _taggedTemplateLiteral(["\n    \n  "]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject3$4 = function _templateObject3() {
     return data;
@@ -947,7 +987,7 @@ function _templateObject3$4() {
 }
 
 function _templateObject2$5() {
-  var data = _taggedTemplateLiteral(["\n    \n  "]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject2$5 = function _templateObject2() {
     return data;
@@ -957,7 +997,7 @@ function _templateObject2$5() {
 }
 
 function _templateObject$7() {
-  var data = _taggedTemplateLiteral(["\n  background-color: #43425D;\n  position: fixed;\n  transition: width 0.5s ease-out;\n\n  .sidebar-header {\n    font-size: 0.9375rem;\n    letter-spacing: 0.1875rem;\n    color: white;\n    margin: 1.625rem 1.25rem;\n  }\n\n  * {\n    transition: opacity 0.2s ease-out;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n    background-color: #43425d;\n    .sidebar-header {\n      font-size: 0.9375rem;\n      letter-spacing: 0.1875rem;\n      color: white;\n      padding: 1.625rem 1.25rem;\n      margin: 0;\n    }\n    width: ", ";\n    height: ", ";\n  "]);
 
   _templateObject$7 = function _templateObject() {
     return data;
@@ -965,37 +1005,46 @@ function _templateObject$7() {
 
   return data;
 }
-// 제대로 스무스하게 할려면 트랜지션이 아니라 애니메이션으로 해야하는 듯
-var style$3 = css(_templateObject$7());
-var modes = {
-  mini: css(_templateObject2$5()),
-  normal: css(_templateObject3$4())
-};
-var show = css(_templateObject4$4());
-var hide = css(_templateObject5$3());
-/** `SideBar` 컴포넌트는 화면에 사이드바를 추가할 때 사용합니다.  */
 
+// 제대로 스무스하게 할려면 트랜지션이 아니라 애니메이션으로 해야하는 듯
+
+/** `SideBar` 컴포넌트는 화면에 사이드바를 추가할 때 사용합니다.  */
 var SideBar = function SideBar(_ref) {
   var mode = _ref.mode,
       width = _ref.width,
       height = _ref.height,
       toggled = _ref.toggled,
-      children = _ref.children;
-  console.log(toggled);
+      children = _ref.children,
+      title = _ref.title,
+      toggleAnimation = _ref.toggleAnimation;
+  var style = css(_templateObject$7(), width, height);
+  var modes = {
+    mini: css(_templateObject2$5()),
+    normal: css(_templateObject3$4())
+  };
+  var toggleAnimations = {
+    shrink: css(_templateObject4$4()),
+    slideIn: css(_templateObject5$3())
+  };
+  var show = {
+    shrink: css(_templateObject6$2()),
+    slideIn: css(_templateObject7$2())
+  };
+  var hide = {
+    shrink: css(_templateObject8$2()),
+    slideIn: css(_templateObject9$1())
+  };
   return jsx("div", {
-    css: [style$3, modes[mode], {
-      width: width,
-      height: height
-    }, toggled ? show : hide]
+    css: [style, modes[mode], toggleAnimations[toggleAnimation], toggled ? show[toggleAnimation] : hide[toggleAnimation]]
   }, jsx("h1", {
     className: "sidebar-header"
-  }, "WARD"), children);
+  }, title), children);
 };
 
 SideBar.defaultProps = {
-  mode: 'normal',
-  width: '16.25rem',
-  height: '100vh',
+  mode: "normal",
+  width: "16.25rem",
+  height: "100vh",
   toggled: true
 };
 
@@ -1012,7 +1061,7 @@ function _templateObject$8() {
 /**
  * 여러개의 Input 컴포넌트로 이루어진 Form을 만들고 싶을 때 이 컴포넌트를 사용하세요.
  */
-var style$4 = css(_templateObject$8());
+var style$3 = css(_templateObject$8());
 
 var Form = function Form(_ref) {
   var title = _ref.title,
@@ -1025,7 +1074,7 @@ var Form = function Form(_ref) {
       redirectText = _ref.redirectText,
       redirectUrl = _ref.redirectUrl;
   return jsx("div", {
-    css: [style$4, {
+    css: [style$3, {
       width: width,
       height: height
     }],

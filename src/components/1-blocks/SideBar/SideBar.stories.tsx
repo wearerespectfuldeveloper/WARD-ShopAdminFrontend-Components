@@ -21,10 +21,23 @@ export default {
 export const sideBar = () => {
   const mode = select("mode", ["normal", "mini"], "normal");
   const toggled = boolean("toggled", true);
-  const width = text("width", "");
+  const width = text("width", "16.25rem");
+  const height = text("height", "100vh");
+  const toggleAnimation = select(
+    "slideAnimation",
+    ["shrink", "slideIn"],
+    "shrink"
+  );
 
   return (
-    <SideBar mode={mode} width={width} toggled={toggled}>
+    <SideBar
+      toggleAnimation={toggleAnimation}
+      title="WARD"
+      mode={mode}
+      width={width}
+      height={height}
+      toggled={toggled}
+    >
       
     </SideBar>
   );
@@ -37,16 +50,29 @@ sideBar.story = {
 export const sideBarWithList = () => {
   const mode = select("mode", ["normal", "mini"], "normal");
   const toggled = boolean("toggled", true);
-  const width = text("width", "");
+  const width = text("width", "16.25rem");
+  const height = text("height", "100vh");
+
+  const toggleAnimation = select(
+    "slideAnimation",
+    ["shrink", "slideIn"],
+    "shrink"
+  );
 
   const leading1 = <Icon icon="dashboard"></Icon>;
   const leading2 = <Icon icon="products"></Icon>;
   const leading3 = <Icon icon="customers"></Icon>;
   const leading4 = <Icon icon="chatting"></Icon>;
 
-
   return (
-    <SideBar mode={mode} width={width} toggled={toggled}>
+    <SideBar
+      toggleAnimation={toggleAnimation}
+      title="WARD"
+      mode={mode}
+      width={width}
+      height={height}
+      toggled={toggled}
+    >
       <ListItem leading={leading1}>판매 현황</ListItem>
       <ListItem leading={leading2} border="none">
         상품 관리 / 등록

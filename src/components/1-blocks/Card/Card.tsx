@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from 'react';
 import { jsx, css } from "@emotion/core";
 
 type CardProps = {
@@ -18,6 +19,8 @@ type CardProps = {
   radius: boolean;
   /** 카드 배경색 설정 */
   backgroundColor?: string;
+  /* 스타일 커스터마이징 하고싶을 때 사용 */
+  className?: string;
 };
 
 const Card = ({
@@ -28,7 +31,8 @@ const Card = ({
   title,
   radius,
   sideContent,
-  backgroundColor
+  backgroundColor,
+  className
 }: CardProps) => {
   const style = css`
     padding: 20px;
@@ -65,7 +69,7 @@ const Card = ({
   };
 
   return (
-    <div css={[style, { width, height }, elevations[elevation]]}>
+    <div className={className} css={[style, { width, height }, elevations[elevation]]}>
       <div className="card-header">
         <h1>{title}</h1>
         <div>{sideContent}</div>

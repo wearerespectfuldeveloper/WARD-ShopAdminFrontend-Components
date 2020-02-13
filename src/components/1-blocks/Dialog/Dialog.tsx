@@ -16,6 +16,8 @@ export type DialogProps = {
   confirmText: string;
   onCancel?: () => void;
   onConfirm?: () => void;
+  /* 스타일 커스터마이징 하고싶을 때 사용 */
+  className?: string;
 };
 
 const fullscreen = css`
