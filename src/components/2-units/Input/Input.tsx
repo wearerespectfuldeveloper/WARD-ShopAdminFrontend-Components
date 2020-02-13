@@ -1,15 +1,18 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
+import React from 'react';
 
 type InputProps = {
   /** Input 컴포넌트의 길이 */
-  width: string | number;
+  width?: string | number;
   /** Input 태그의 타입 */
   inputType: 'text' | 'password';
   /** 값이 true 이면 Input 컴포넌트를 비활성화합니다 */
   disabled?: boolean;
   /** 희미하게 보이는 안내 글자 */
   inputPlaceHolder?: string;
+  /* 추가적인 스타일링을 적용하기 위한 클래스 */
+  className?: string;
 }
 
 const style = css`
@@ -32,7 +35,8 @@ const Input = ({
   width,
   disabled,
   inputPlaceHolder,
-  inputType
+  inputType,
+  className
 }: InputProps) => {
   return (
     <input 
@@ -41,6 +45,7 @@ const Input = ({
         style,
         {width}
       ]}
+      className={className}
       placeholder={inputPlaceHolder}
       disabled={disabled}
     />
@@ -48,9 +53,8 @@ const Input = ({
 }
 
 Input.defaultProps = {
-  width: '400px',
   disabled: false
 }
 
-export default Input;
+export default React.memo(Input);
 

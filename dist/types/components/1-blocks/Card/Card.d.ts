@@ -1,4 +1,5 @@
-/// <reference types="react" />
+/** @jsx jsx */
+import React from 'react';
 declare type CardProps = {
     /** 카드의 너비를 임의로 설정 */
     width?: string | number;
@@ -16,9 +17,10 @@ declare type CardProps = {
     radius: boolean;
     /** 카드 배경색 설정 */
     backgroundColor?: string;
+    className?: string;
 };
 declare const Card: {
-    ({ width, height, children, elevation, title, radius, sideContent, backgroundColor }: CardProps): JSX.Element;
+    ({ width, height, children, elevation, title, radius, sideContent, backgroundColor, className }: CardProps): JSX.Element;
     defaultProps: {
         elevation: string;
         radius: boolean;

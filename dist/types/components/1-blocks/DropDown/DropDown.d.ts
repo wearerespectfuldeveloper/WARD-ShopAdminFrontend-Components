@@ -9,9 +9,10 @@ declare type DropDownProps = {
         text: string;
         clickFunc: () => void;
     }>;
+    className?: string;
 };
 declare const DropDown: {
-    ({ text, items, width }: DropDownProps): JSX.Element;
+    ({ text, items, width, className }: DropDownProps): JSX.Element;
     defaultProps: {};
 };
 export default DropDown;

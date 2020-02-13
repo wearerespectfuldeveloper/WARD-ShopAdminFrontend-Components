@@ -10,9 +10,10 @@ export declare type DialogProps = {
     confirmText: string;
     onCancel?: () => void;
     onConfirm?: () => void;
+    className?: string;
 };
 declare const Dialog: {
-    ({ visible, title, description, hideButtons, cancellable, cancelText, confirmText, children, onCancel, onConfirm }: DialogProps): JSX.Element;
+    ({ visible, title, description, hideButtons, cancellable, cancelText, confirmText, children, onCancel, onConfirm, className }: DialogProps): JSX.Element;
     defaultProps: {
         cancelText: string;
         confirmText: string;

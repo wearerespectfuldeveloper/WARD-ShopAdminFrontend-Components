@@ -72,7 +72,8 @@ const Dialog = ({
   confirmText,
   children,
   onCancel,
-  onConfirm
+  onConfirm,
+  className
 }: DialogProps) => {
   const fadeTransition = useTransition(visible, null, {
     from: { opacity: 0 },
@@ -107,6 +108,7 @@ const Dialog = ({
             css={[fullscreen, darkLayer]}
             key={key}
             style={props}
+            className={className}
           ></animated.div>
         ) : null
       )}
@@ -117,6 +119,7 @@ const Dialog = ({
             css={[fullscreen, whiteBoxWrapper]}
             style={props}
             key={key}
+            className={className}
           >
             <div css={whiteBox}>
               {title && <h3>{title}</h3>}

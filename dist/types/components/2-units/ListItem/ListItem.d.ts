@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 declare type ListItemProps = {
     /** 체크박스의 크기를 임의로 결정합니다. */
     width?: string | number;
@@ -12,12 +12,13 @@ declare type ListItemProps = {
     border: "top" | "right" | "bottom" | "left" | "none";
     /** 리스트 아이템 안의 내용 */
     children: React.ReactNode;
+    className?: string;
 };
-declare const ListItem: {
-    ({ width, leading, trailing, theme, children, border }: ListItemProps): JSX.Element;
+declare const _default: React.MemoExoticComponent<{
+    ({ width, leading, trailing, theme, children, border, className }: ListItemProps): JSX.Element;
     defaultProps: {
         theme: string;
         border: string;
     };
-};
-export default ListItem;
+}>;
+export default _default;

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import React from "react";
 
 type ListItemProps = {
   /** 체크박스의 크기를 임의로 결정합니다. */
@@ -14,6 +15,8 @@ type ListItemProps = {
   border: "top" | "right" | "bottom" | "left" | "none";
   /** 리스트 아이템 안의 내용 */
   children: React.ReactNode;
+  /* 추가적인 스타일링을 적용하기 위한 클래스 */
+  className?: string;
 };
 
 const style = css`
@@ -83,10 +86,14 @@ const ListItem = ({
   trailing,
   theme,
   children,
-  border
+  border,
+  className
 }: ListItemProps) => {
   return (
-    <li css={[style, { width }, themes[theme], borders[border]]}>
+    <li
+      css={[style, { width }, themes[theme], borders[border]]}
+      className={className}
+    >
       <div className="content">
         <div className="leading">{leading}</div>
         {children}
@@ -101,4 +108,4 @@ ListItem.defaultProps = {
   border: "left"
 };
 
-export default ListItem;
+export default React.memo(ListItem);

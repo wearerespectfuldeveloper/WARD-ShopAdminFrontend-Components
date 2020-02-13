@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import React from "react";
 
 type TableRowProps = {
   /** 테이블 행이 테이블 테이블 헤더의 행인지, 테이블 바디의 행인지를 설정 */
@@ -9,14 +10,17 @@ type TableRowProps = {
    * type 값에 따라서 다른 스타일이 적용됩니다.
    */
   cellList: Array<
-    {type: "picture", data: [string, string]} |
-    {type: "text", data: string} |
-    {type: "price", data: string | number} |
-    {type: "stock", data: string | number} |
-    {type: "date", data: string | number } >;
+    | { type: "picture"; data: [string, string] }
+    | { type: "text"; data: string }
+    | { type: "price"; data: string | number }
+    | { type: "stock"; data: string | number }
+    | { type: "date"; data: string | number }
+  >;
+  /* 추가적인 스타일링을 적용하기 위한 클래스 */
+  className?: string;
 };
 
-const TableRow = ({ type, cellList }: TableRowProps) => {
+const TableRow = ({ type, cellList, className }: TableRowProps) => {
   const style = css`
     display: flex;
     justify-content: space-between;
@@ -57,7 +61,7 @@ const TableRow = ({ type, cellList }: TableRowProps) => {
 
   RowItems = cellList.map(item => {
     let cellStyle;
-    let element:any;
+    let element: any;
     element = item.data;
 
     switch (item.type) {
@@ -84,11 +88,10 @@ const TableRow = ({ type, cellList }: TableRowProps) => {
               }
             }
           }
-
         `;
         break;
       case "price":
-        element = item.data + '원';
+        element = item.data + "원";
         break;
       case "stock":
         let stateText;
@@ -100,7 +103,7 @@ const TableRow = ({ type, cellList }: TableRowProps) => {
           stateText = " 재고 없음";
           stateColor = "255, 114, 133";
         } else {
-          stateText =  " 재고 부족";
+          stateText = " 재고 부족";
           stateColor = "255, 202, 131";
         }
         element = item.data + stateText;
@@ -130,11 +133,11 @@ const TableRow = ({ type, cellList }: TableRowProps) => {
     );
   });
 
-  return <tr css={[style, rowStyle]}>{RowItems}</tr>;
+  return <tr css={[style, rowStyle]} className={className}>{RowItems}</tr>;
 };
 
 TableRow.defaultProps = {
   type: "body"
 };
 
-export default TableRow;
+export default React.memo(TableRow);

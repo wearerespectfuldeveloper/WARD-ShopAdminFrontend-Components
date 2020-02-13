@@ -11,7 +11,12 @@ import {
 export default {
   title: "Block|DropDown",
   component: DropDown,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
+  parameters: {
+    docs: {
+      inlineStories: false
+    }
+  }
 };
 
 export const dropDown = () => {

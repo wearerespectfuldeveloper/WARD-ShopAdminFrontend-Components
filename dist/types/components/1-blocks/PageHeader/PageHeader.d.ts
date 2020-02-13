@@ -10,9 +10,10 @@ declare type PageHeaderProps = {
     rightElement: React.ReactNode;
     /** Sticky 헤더의 적용 여부 */
     sticky: boolean;
+    className?: string;
 };
 declare const PageHeader: {
-    ({ color, backgroundColor, leftElement, rightElement, sticky }: PageHeaderProps): JSX.Element;
+    ({ color, backgroundColor, leftElement, rightElement, sticky, className }: PageHeaderProps): JSX.Element;
     defaultProps: {
         color: string;
         backgroundColor: string;

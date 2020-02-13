@@ -11,13 +11,14 @@ declare type SideBarProps = {
     /** 사이드바의 토글 동작을 설정합니다 */
     toggleAnimation: "shrink" | "slideIn";
     /** 사이드바의 너비를 임의로 설정합니다. */
-    width: string | number;
+    width?: string | number;
     /** 사이드바의 높이를 임의로 설정합니다. */
-    height: string | number;
+    height?: string | number;
+    className?: string;
 };
 /** `SideBar` 컴포넌트는 화면에 사이드바를 추가할 때 사용합니다.  */
 declare const SideBar: {
-    ({ mode, width, height, toggled, children, title, toggleAnimation }: SideBarProps): JSX.Element;
+    ({ mode, width, height, toggled, children, title, toggleAnimation, className }: SideBarProps): JSX.Element;
     defaultProps: {
         mode: string;
         width: string;

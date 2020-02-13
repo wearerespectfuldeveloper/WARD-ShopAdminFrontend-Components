@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 declare type ButtonProps = {
     /** 버튼 안의 내용 */
     children: React.ReactNode;
@@ -14,13 +14,13 @@ declare type ButtonProps = {
     width?: string | number;
     /** 버튼에서 아이콘만 보여줄 때 이 값을 `true`로 설정하세요. */
     iconOnly?: boolean;
+    className?: string;
 };
-/** `Button` 컴포넌트는 어떠한 작업을 트리거 할 때 사용합니다.  */
-declare const Button: {
-    ({ children, theme, size, disabled, width, iconOnly, onClick }: ButtonProps): JSX.Element;
+declare const _default: React.MemoExoticComponent<{
+    ({ children, theme, size, disabled, width, iconOnly, onClick, className }: ButtonProps): JSX.Element;
     defaultProps: {
         theme: string;
         size: string;
     };
-};
-export default Button;
+}>;
+export default _default;

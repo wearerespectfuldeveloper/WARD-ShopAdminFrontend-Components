@@ -30,16 +30,18 @@ export const sideBar = () => {
   );
 
   return (
-    <SideBar
-      toggleAnimation={toggleAnimation}
-      title="WARD"
-      mode={mode}
-      width={width}
-      height={height}
-      toggled={toggled}
-    >
-      
-    </SideBar>
+    <div style={{ height: "1000px" }}>
+      <SideBar
+        toggleAnimation={toggleAnimation}
+        title="WARD"
+        mode={mode}
+        width={width}
+        height={height}
+        toggled={toggled}
+      >
+        
+      </SideBar>
+    </div>
   );
 };
 
@@ -65,24 +67,26 @@ export const sideBarWithList = () => {
   const leading4 = <Icon icon="chatting"></Icon>;
 
   return (
-    <SideBar
-      toggleAnimation={toggleAnimation}
-      title="WARD"
-      mode={mode}
-      width={width}
-      height={height}
-      toggled={toggled}
-    >
-      <ListItem leading={leading1}>판매 현황</ListItem>
-      <ListItem leading={leading2} border="none">
-        상품 관리 / 등록
-      </ListItem>
-      <ListItem leading={leading3} border="none">
-        고객 정보 관리
-      </ListItem>
-      <ListItem leading={leading4} border="none">
-        고객 문의 관리
-      </ListItem>
-    </SideBar>
+    <div style={{ height: "1000px" }}>
+      <SideBar
+        toggleAnimation={toggleAnimation}
+        title="WARD"
+        mode={mode}
+        width={width}
+        height={height}
+        toggled={toggled}
+      >
+        <ListItem leading={leading1}>판매 현황</ListItem>
+        <ListItem leading={leading2} border="none">
+          상품 관리 / 등록
+        </ListItem>
+        <ListItem leading={leading3} border="none">
+          고객 정보 관리
+        </ListItem>
+        <ListItem leading={leading4} border="none">
+          고객 문의 관리
+        </ListItem>
+      </SideBar>
+    </div>
   );
 };

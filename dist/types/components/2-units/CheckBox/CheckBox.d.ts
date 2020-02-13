@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 declare type CheckBoxProps = {
     /** 이 체크박스가 지닐 id를 설정 */
     id: string;
@@ -16,13 +16,14 @@ declare type CheckBoxProps = {
     isChecked?: boolean;
     /** 체크 불가능 설정 */
     disabled?: boolean;
+    className?: string;
 };
-declare const CheckBox: {
-    ({ width, size, color, sideText, sideTextColor, isChecked, disabled, id }: CheckBoxProps): JSX.Element;
+declare const _default: React.MemoExoticComponent<{
+    ({ width, size, color, sideText, sideTextColor, isChecked, disabled, id, className }: CheckBoxProps): JSX.Element;
     defaultProps: {
         size: string;
         isChecked: boolean;
         disabled: boolean;
     };
-};
-export default CheckBox;
+}>;
+export default _default;

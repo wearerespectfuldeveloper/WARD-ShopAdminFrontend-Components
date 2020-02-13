@@ -23,6 +23,16 @@ type CardProps = {
   className?: string;
 };
 
+const elevations = {
+  0: css``,
+  1: css`
+    box-shadow: 0px 2px 6px #0000000a;
+  `,
+  2: css`
+    box-shadow: 0px 3px 9px #0000000a;
+  `
+};
+
 const Card = ({
   width,
   height,
@@ -57,16 +67,6 @@ const Card = ({
 
     }
   `;
-
-  const elevations = {
-    0: css``,
-    1: css`
-      box-shadow: 0px 2px 6px #0000000a;
-    `,
-    2: css`
-      box-shadow: 0px 3px 9px #0000000a;
-    `
-  };
 
   return (
     <div className={className} css={[style, { width, height }, elevations[elevation]]}>

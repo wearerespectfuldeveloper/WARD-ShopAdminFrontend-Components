@@ -16,12 +16,12 @@ export type FormProps = {
   bodyElements: React.ReactNode;
   /** Form 안에 들어갈 Button 과 기타 요소들 */
   footerElements?: React.ReactNode;
-  /** 따로 추가적인 스타일 커트서마이징을 하고 싶을 때 넣는 클래스 이름 */
-  className?: string;
   /** 리다이렉트 안내 텍스트 */
   redirectText?: string;
   /** 리다이렉트 되어 도착할 주소 */
   redirectUrl?: string;
+  /* 추가적인 스타일링을 적용하기 위한 클래스 */
+  className?: string;
 };
 
 /**
@@ -51,13 +51,12 @@ const style = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     margin-bottom: 39px;
 
     > input {
       margin-bottom: 45px;
     }
-    
   }
 
   .form-footer {
@@ -69,7 +68,6 @@ const style = css`
     }
   }
 `;
-
 
 const Form = ({
   title,
@@ -88,19 +86,18 @@ const Form = ({
         <h1 className="title">{title}</h1>
         <p className="sub-title">{subTitle}</p>
       </div>
-      <div className="form-body">
-        {bodyElements}
-      </div>
+      <div className="form-body">{bodyElements}</div>
       <div className="form-footer">
         {footerElements}
-        <a className="guide" href={redirectUrl}>{redirectText}</a>
+        <a className="guide" href={redirectUrl}>
+          {redirectText}
+        </a>
       </div>
     </div>
   );
 };
 
 Form.defaultProps = {
-  width: '100%'
 };
 
 export default Form;

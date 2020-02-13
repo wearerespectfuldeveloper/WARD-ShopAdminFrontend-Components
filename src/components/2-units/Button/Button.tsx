@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import React from 'react';
 
 type ButtonProps = {
   /** 버튼 안의 내용 */
@@ -16,6 +17,8 @@ type ButtonProps = {
   width?: string | number;
   /** 버튼에서 아이콘만 보여줄 때 이 값을 `true`로 설정하세요. */
   iconOnly?: boolean;
+  /* 추가적인 스타일링을 적용하기 위한 클래스 */
+  className?: string;
 };
 
 const style = css`
@@ -136,7 +139,8 @@ const Button = ({
   disabled,
   width,
   iconOnly,
-  onClick
+  onClick,
+  className
 }: ButtonProps) => {
   return (
     <button
@@ -147,6 +151,7 @@ const Button = ({
         { width },
         iconOnly && [iconOnlyStyle, iconOnlySizes[size]]
       ]}
+      className={className}
       disabled={disabled}
       onClick={onClick}
     >
@@ -160,4 +165,4 @@ Button.defaultProps = {
   size: "medium"
 };
 
-export default Button;
+export default React.memo(Button);

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import React from 'react';
 
 type CheckBoxProps = {
   /** 이 체크박스가 지닐 id를 설정 */
@@ -18,6 +19,8 @@ type CheckBoxProps = {
   isChecked?: boolean;
   /** 체크 불가능 설정 */
   disabled?: boolean;
+  /* 추가적인 스타일링을 적용하기 위한 클래스 */
+  className?: string;
 };
 
 const CheckBox = ({
@@ -28,7 +31,8 @@ const CheckBox = ({
   sideTextColor,
   isChecked,
   disabled,
-  id
+  id,
+  className
 }: CheckBoxProps) => {
   const style = css`
     #${id} {
@@ -139,7 +143,7 @@ const CheckBox = ({
     : css``;
 
   return (
-    <div css={[style, { width }, sizes[size], disabledStyle]}>
+    <div css={[style, { width }, sizes[size], disabledStyle]} className={className}>
       <input type="checkbox" id={id} disabled={disabled} />
       <label htmlFor={id}>{sideText}</label>
     </div>
@@ -152,4 +156,4 @@ CheckBox.defaultProps = {
   disabled: false
 };
 
-export default CheckBox;
+export default React.memo(CheckBox);

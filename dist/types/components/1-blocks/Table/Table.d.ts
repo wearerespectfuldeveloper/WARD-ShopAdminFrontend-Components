@@ -4,9 +4,10 @@ declare type TableProps = {
     children: React.ReactNode;
     /** 테이블의 너비를 임의로 설정합니다 */
     width?: string | number;
+    className?: string;
 };
 declare const Table: {
-    ({ children, width }: TableProps): JSX.Element;
+    ({ children, width, className }: TableProps): JSX.Element;
     defaultProps: {};
 };
 export default Table;

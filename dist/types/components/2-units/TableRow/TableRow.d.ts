@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 declare type TableRowProps = {
     /** 테이블 행이 테이블 테이블 헤더의 행인지, 테이블 바디의 행인지를 설정 */
     type: "head" | "body";
@@ -22,11 +22,12 @@ declare type TableRowProps = {
         type: "date";
         data: string | number;
     }>;
+    className?: string;
 };
-declare const TableRow: {
-    ({ type, cellList }: TableRowProps): JSX.Element;
+declare const _default: React.MemoExoticComponent<{
+    ({ type, cellList, className }: TableRowProps): JSX.Element;
     defaultProps: {
         type: string;
     };
-};
-export default TableRow;
+}>;
+export default _default;

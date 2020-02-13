@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core';
-import { ReadStream } from 'tty';
+import { jsx, css } from "@emotion/core";
+import { ReadStream } from "tty";
 
 type PageHeaderProps = {
   /** 페이지 헤더의 글자색상을 설정 */
@@ -13,15 +13,17 @@ type PageHeaderProps = {
   rightElement: React.ReactNode;
   /** Sticky 헤더의 적용 여부 */
   sticky: boolean;
-}
-
+  /* 추가적인 스타일링을 적용하기 위한 클래스 */
+  className?: string;
+};
 
 const PageHeader = ({
   color,
   backgroundColor,
   leftElement,
   rightElement,
-  sticky
+  sticky,
+  className
 }: PageHeaderProps) => {
   const style = css`
     display: flex;
@@ -31,29 +33,21 @@ const PageHeader = ({
     color: ${color};
     background-color: ${backgroundColor};
     ${sticky ? "position: sticky; top: 0" : ""};
-    box-shadow: 0px 2px 6px #0000000A;
-
-  `
+    box-shadow: 0px 2px 6px #0000000a;
+  `;
   return (
-    <div
-      css={[style]} 
-    >
-      <div className="left">
-        {leftElement}
-      </div>
+    <div css={[style]} className={className}>
+      <div className="left">{leftElement}</div>
 
-      <div className="right">
-        {rightElement}
-      </div>
-
+      <div className="right">{rightElement}</div>
     </div>
-  )
-}
+  );
+};
 
 PageHeader.defaultProps = {
   color: "black",
   backgroundColor: "#ffffff",
   sticky: false
-}
+};
 
 export default PageHeader;
