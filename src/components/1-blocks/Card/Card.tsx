@@ -7,6 +7,8 @@ type CardProps = {
   width?: string | number;
   /** 카드의 높이를 임의로 설정 */
   height?: string | number;
+  /** 카드의 padding을 직접 설정합니다. 기본값은 상하좌우 전체 20px 입니다. */
+  padding?: string | number;
   /** 카드의 제목을 설정. 제목이 있을시 제목 아래 Divider 또한 생성됩니다. */
   title?: string;
   /** 카드의 내용물 */
@@ -36,6 +38,7 @@ const elevations = {
 const Card = ({
   width,
   height,
+  padding,
   children,
   elevation,
   title,
@@ -69,7 +72,7 @@ const Card = ({
   `;
 
   return (
-    <div className={className} css={[style, { width, height }, elevations[elevation]]}>
+    <div className={className} css={[style, { width, height, padding }, elevations[elevation]]}>
       <div className="card-header">
         <h1>{title}</h1>
         <div>{sideContent}</div>

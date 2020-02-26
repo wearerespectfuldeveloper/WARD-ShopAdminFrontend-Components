@@ -6,6 +6,7 @@ import external from 'rollup-plugin-peer-deps-external';
 import svgr from '@svgr/rollup';
 import url from 'rollup-plugin-url';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import scss from 'rollup-plugin-scss';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx']; // 어떤 확장자를 처리 할 지 정함
 
@@ -23,7 +24,8 @@ export default {
     }), // CommonJS 형태로 만들어진 모듈도 불러와서 사용 할 수 있게 해줌. 현재 프로젝트 상황에서는 없어도 무방함
     babel({ extensions, include: ['src/**/*'], runtimeHelpers: true }), // Babel을 사용 할 수 있게 해줌
     url(), // 미디어 파일을 dataURI 형태로 불러와서 사용 할 수 있게 해줌.
-    svgr() // SVG를 컴포넌트로 사용 할 수 있게 해줌.
+    svgr(), // SVG를 컴포넌트로 사용 할 수 있게 해줌.
+    scss()
   ],
   output: [
     {

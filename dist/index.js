@@ -1160,6 +1160,7 @@ var elevations = {
 var Card = function Card(_ref) {
   var width = _ref.width,
       height = _ref.height,
+      padding = _ref.padding,
       children = _ref.children,
       elevation = _ref.elevation,
       title = _ref.title,
@@ -1172,7 +1173,8 @@ var Card = function Card(_ref) {
     className: className,
     css: [style, {
       width: width,
-      height: height
+      height: height,
+      padding: padding
     }, elevations[elevation]]
   }, jsx("div", {
     className: "card-header"
