@@ -40,6 +40,26 @@ const TableRow = ({ type, cellList, className }: TableRowProps) => {
         font-size: 0.6875rem;
       }
     }
+
+    @media screen and (max-width: 325px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      th {
+        text-align: center;
+      }
+      td {
+        text-align: center;
+      }
+      th,
+      td {
+        width: ${100 / cellList.length}%;
+        span {
+          font-size: 0.6875rem;
+        }
+      }
+    }
   `;
 
   let rowStyle;
@@ -94,19 +114,15 @@ const TableRow = ({ type, cellList, className }: TableRowProps) => {
         element = item.data + "원";
         break;
       case "stock":
-        let stateText;
         let stateColor;
         if (+item.data > 50) {
-          stateText = " 재고 많음";
           stateColor = "105, 228, 166";
         } else if (+item.data === 0) {
-          stateText = " 재고 없음";
           stateColor = "255, 114, 133";
         } else {
-          stateText = " 재고 부족";
           stateColor = "255, 202, 131";
         }
-        element = item.data + stateText;
+        element = item.data
         cellStyle = css`
           font-weight: bold;
           span {
@@ -133,7 +149,11 @@ const TableRow = ({ type, cellList, className }: TableRowProps) => {
     );
   });
 
-  return <tr css={[style, rowStyle]} className={className}>{RowItems}</tr>;
+  return (
+    <tr css={[style, rowStyle]} className={className}>
+      {RowItems}
+    </tr>
+  );
 };
 
 TableRow.defaultProps = {

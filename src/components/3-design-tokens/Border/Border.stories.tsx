@@ -17,12 +17,12 @@ export const border = () => {
     tokenList.push(i);
   }
   
-  const border = borderToken[select('borderToken', tokenList, 'thick')];
+  const border = borderToken[select('borderToken', tokenList, 'thin')];
 
   return (
     <BorderBox
       border={border}
     ></BorderBox>
-  )
+  );
 }
 

@@ -24,7 +24,8 @@ type ButtonProps = {
 const style = css`
   display: flex;
   justify-content: center;
-  align-items: center;
+  position: relative;
+  align-items: baseline;
   cursor: pointer;
   border-radius: 4px;
   outline: none;
@@ -38,6 +39,7 @@ const style = css`
     width: 1rem;
     margin-right: 1rem;
   }
+  
 `;
 
 const themes = {

@@ -19,13 +19,21 @@ export type ButtonGroupProps = {
  */
 
  // direction 에 따라 margin-left 또는 margin-top 설정
-const gapStyle = (direction: 'row' | 'column', gap: number | string) => {
-  const marginType = direction === 'row' ? 'marginLeft' : 'marginTop';
-  return css({
-    'button + button': {
-      [marginType]: gap
+const style = (direction: 'row' | 'column', gap: number | string) => {
+  const marginType = direction === 'row' ? 'margin-left' : 'margin-top';
+  return css`
+    button + button {
+      ${marginType}: ${gap};
     }
-  });
+
+    @media screen and (max-width: 325px) {
+      flex-direction: column;
+      button + button {
+        margin-left: 0px;
+        margin-top: ${gap};
+      }
+    }
+  `
 };
 
 const rightAlignStyle = css`
@@ -47,7 +55,7 @@ const ButtonGroup = ({
           display: 'flex',
           flexDirection: direction
         },
-        gapStyle(direction, gap),
+        style(direction, gap),
         rightAlign && rightAlignStyle
       ]}
       className={className}
