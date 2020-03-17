@@ -3,8 +3,12 @@ import { jsx, css } from '@emotion/core';
 import React from 'react';
 
 type InputProps = {
-  /** Input 컴포넌트의 길이 */
-  width?: string | number;
+  /** 기본 width */
+  width?: string;
+  /** 최대 width */
+  maxWidth?: string;
+  /** 최소 width */
+  minWidth?: string;
   /** Input 태그의 타입 */
   inputType: 'text' | 'password';
   /** 값이 true 이면 Input 컴포넌트를 비활성화합니다 */
@@ -33,6 +37,8 @@ const style = css`
 `
 const Input = ({
   width,
+  maxWidth,
+  minWidth,
   disabled,
   inputPlaceHolder,
   inputType,
@@ -43,7 +49,7 @@ const Input = ({
       type={inputType}
       css={[
         style,
-        {width}
+        {width, maxWidth, minWidth}
       ]}
       className={className}
       placeholder={inputPlaceHolder}

@@ -3,8 +3,12 @@ import { jsx, css } from "@emotion/core";
 import React from "react";
 
 type ListItemProps = {
-  /** 체크박스의 크기를 임의로 결정합니다. */
-  width?: string | number;
+  /** 기본 width */
+  width?: string;
+  /** 최대 width */
+  maxWidth?: string;
+  /** 최소 width */
+  minWidth?: string;
   /** 리스트의 앞면에 집어넣을 아이콘이나 아바타 컴포넌트 */
   leading?: React.ReactNode;
   /** 리스트의 뒷면에 집어넣을 아이콘이나 아바타 컴포넌트 */
@@ -82,6 +86,8 @@ const borders = {
 
 const ListItem = ({
   width,
+  maxWidth,
+  minWidth,
   leading,
   trailing,
   theme,
@@ -91,7 +97,7 @@ const ListItem = ({
 }: ListItemProps) => {
   return (
     <li
-      css={[style, { width }, themes[theme], borders[border]]}
+      css={[style, { width, maxWidth, minWidth }, themes[theme], borders[border]]}
       className={className}
     >
       <div className="content">

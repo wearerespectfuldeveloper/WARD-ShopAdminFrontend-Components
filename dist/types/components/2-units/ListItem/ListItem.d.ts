@@ -1,7 +1,11 @@
 import React from "react";
 declare type ListItemProps = {
-    /** 체크박스의 크기를 임의로 결정합니다. */
-    width?: string | number;
+    /** 기본 width */
+    width?: string;
+    /** 최대 width */
+    maxWidth?: string;
+    /** 최소 width */
+    minWidth?: string;
     /** 리스트의 앞면에 집어넣을 아이콘이나 아바타 컴포넌트 */
     leading?: React.ReactNode;
     /** 리스트의 뒷면에 집어넣을 아이콘이나 아바타 컴포넌트 */
@@ -15,7 +19,7 @@ declare type ListItemProps = {
     className?: string;
 };
 declare const _default: React.MemoExoticComponent<{
-    ({ width, leading, trailing, theme, children, border, className }: ListItemProps): JSX.Element;
+    ({ width, maxWidth, minWidth, leading, trailing, theme, children, border, className }: ListItemProps): JSX.Element;
     defaultProps: {
         theme: string;
         border: string;

@@ -257,6 +257,70 @@ function SvgArrowDown(props) {
   }, props), _ref$a);
 }
 
+function _extends$b() { _extends$b = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$b.apply(this, arguments); }
+
+var _ref$b =
+/*#__PURE__*/
+React.createElement("path", {
+  d: "M3.414 7.657l3.95 3.95A1 1 0 015.95 13.02L.293 7.364a.997.997 0 010-1.414L5.95.293a1 1 0 111.414 1.414l-3.95 3.95H13a1 1 0 010 2H3.414z"
+});
+
+function SvgArrowLeft(props) {
+  return React.createElement("svg", _extends$b({
+    viewBox: "-5 -5 24 24",
+    width: 24,
+    height: 24,
+    preserveAspectRatio: "xMinYMin",
+    className: "arrowLeft_svg__jam arrowLeft_svg__jam-arrow-left"
+  }, props), _ref$b);
+}
+
+function _extends$c() { _extends$c = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$c.apply(this, arguments); }
+
+var _ref$c =
+/*#__PURE__*/
+React.createElement("text", {
+  transform: "translate(0 15)",
+  fill: "#fff",
+  fontSize: 21,
+  fontFamily: "SourceSansPro-Bold, Source Sans Pro",
+  fontWeight: 700,
+  letterSpacing: ".2em"
+}, React.createElement("tspan", {
+  x: 0,
+  y: 0
+}, "WARD"));
+
+function SvgLogo(props) {
+  return React.createElement("svg", _extends$c({
+    width: 85,
+    height: 21
+  }, props), _ref$c);
+}
+
+function _extends$d() { _extends$d = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$d.apply(this, arguments); }
+
+var _ref$d =
+/*#__PURE__*/
+React.createElement("text", {
+  transform: "translate(0 15)",
+  fill: "#fff",
+  fontSize: 21,
+  fontFamily: "SourceSansPro-Bold, Source Sans Pro",
+  fontWeight: 700,
+  letterSpacing: ".2em"
+}, React.createElement("tspan", {
+  x: 0,
+  y: 0
+}, ":)"));
+
+function SvgLogoIcon(props) {
+  return React.createElement("svg", _extends$d({
+    width: 25,
+    height: 21
+  }, props), _ref$d);
+}
+
 
 
 var icons = /*#__PURE__*/Object.freeze({
@@ -271,7 +335,10 @@ var icons = /*#__PURE__*/Object.freeze({
   trendUp: SvgTrendUp,
   moneyBag: SvgMoneyBag,
   menu: SvgMenu,
-  arrowDown: SvgArrowDown
+  arrowDown: SvgArrowDown,
+  arrowLeft: SvgArrowLeft,
+  logo: SvgLogo,
+  logoIcon: SvgLogoIcon
 });
 
 function _templateObject2() {
@@ -424,7 +491,7 @@ function _templateObject2$1() {
 }
 
 function _templateObject$1() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  border-radius: 4px;\n  outline: none;\n  &:focus {\n    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);\n  }\n  &:disabled {\n    cursor: not-allowed;\n  }\n  svg {\n    width: 1rem;\n    margin-right: 1rem;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  position: relative;\n  align-items: baseline;\n  cursor: pointer;\n  border-radius: 4px;\n  outline: none;\n  &:focus {\n    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);\n  }\n  &:disabled {\n    cursor: not-allowed;\n  }\n  svg {\n    width: 1rem;\n    margin-right: 1rem;\n  }\n  \n"]);
 
   _templateObject$1 = function _templateObject() {
     return data;
@@ -457,12 +524,16 @@ var Button = function Button(_ref) {
       size = _ref.size,
       disabled = _ref.disabled,
       width = _ref.width,
+      maxWidth = _ref.maxWidth,
+      minWidth = _ref.minWidth,
       iconOnly = _ref.iconOnly,
       onClick = _ref.onClick,
       className = _ref.className;
   return jsx("button", {
     css: [style, themes[theme], sizes[size], {
-      width: width
+      width: width,
+      maxWidth: maxWidth,
+      minWidth: minWidth
     }, iconOnly && [iconOnlyStyle, iconOnlySizes[size]]],
     className: className,
     disabled: disabled,
@@ -489,6 +560,8 @@ var style$1 = css(_templateObject$2());
 
 var Input = function Input(_ref) {
   var width = _ref.width,
+      maxWidth = _ref.maxWidth,
+      minWidth = _ref.minWidth,
       disabled = _ref.disabled,
       inputPlaceHolder = _ref.inputPlaceHolder,
       inputType = _ref.inputType,
@@ -496,7 +569,9 @@ var Input = function Input(_ref) {
   return jsx("input", {
     type: inputType,
     css: [style$1, {
-      width: width
+      width: width,
+      maxWidth: maxWidth,
+      minWidth: minWidth
     }],
     className: className,
     placeholder: inputPlaceHolder,
@@ -603,6 +678,8 @@ var borders = {
 
 var ListItem = function ListItem(_ref) {
   var width = _ref.width,
+      maxWidth = _ref.maxWidth,
+      minWidth = _ref.minWidth,
       leading = _ref.leading,
       trailing = _ref.trailing,
       theme = _ref.theme,
@@ -611,7 +688,9 @@ var ListItem = function ListItem(_ref) {
       className = _ref.className;
   return jsx("li", {
     css: [style$2, {
-      width: width
+      width: width,
+      maxWidth: maxWidth,
+      minWidth: minWidth
     }, themes$1[theme], borders[border]],
     className: className
   }, jsx("div", {
@@ -670,7 +749,7 @@ function _templateObject2$3() {
 }
 
 function _templateObject$4() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    th {\n      padding: 0.75rem 1.875rem;\n      text-align: center;\n    }\n    td {\n      padding: 1.25rem 1.875rem;\n      text-align: center;\n    }\n    th,\n    td {\n      width: ", "%;\n      span {\n        font-size: 0.6875rem;\n      }\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    th {\n      padding: 0.75rem 1.875rem;\n      text-align: center;\n    }\n    td {\n      padding: 1.25rem 1.875rem;\n      text-align: center;\n    }\n    th,\n    td {\n      width: ", "%;\n      span {\n        font-size: 0.6875rem;\n      }\n    }\n\n    @media screen and (max-width: 325px) {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      align-items: center;\n      th {\n        text-align: center;\n      }\n      td {\n        text-align: center;\n      }\n      th,\n      td {\n        width: ", "%;\n        span {\n          font-size: 0.6875rem;\n        }\n      }\n    }\n  "]);
 
   _templateObject$4 = function _templateObject() {
     return data;
@@ -683,7 +762,7 @@ var TableRow = function TableRow(_ref) {
   var type = _ref.type,
       cellList = _ref.cellList,
       className = _ref.className;
-  var style = css(_templateObject$4(), 100 / cellList.length);
+  var style = css(_templateObject$4(), 100 / cellList.length, 100 / cellList.length);
   var rowStyle;
   var RowItems;
 
@@ -711,21 +790,17 @@ var TableRow = function TableRow(_ref) {
         break;
 
       case "stock":
-        var stateText;
         var stateColor;
 
         if (+item.data > 50) {
-          stateText = " 재고 많음";
           stateColor = "105, 228, 166";
         } else if (+item.data === 0) {
-          stateText = " 재고 없음";
           stateColor = "255, 114, 133";
         } else {
-          stateText = " 재고 부족";
           stateColor = "255, 202, 131";
         }
 
-        element = item.data + stateText;
+        element = item.data;
         cellStyle = css(_templateObject5$2(), stateColor);
         break;
     }
@@ -747,23 +822,18 @@ TableRow.defaultProps = {
 };
 var TableRow$1 = React.memo(TableRow);
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
+function _templateObject2$4() {
+  var data = _taggedTemplateLiteral(["\n  justify-content: flex-end;\n"]);
 
-  return obj;
+  _templateObject2$4 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
 }
 
 function _templateObject$5() {
-  var data = _taggedTemplateLiteral(["\n  justify-content: flex-end;\n"]);
+  var data = _taggedTemplateLiteral(["\n    button + button {\n      ", ": ", ";\n    }\n\n    @media screen and (max-width: 325px) {\n      flex-direction: column;\n      button + button {\n        margin-left: 0px;\n        margin-top: ", ";\n      }\n    }\n  "]);
 
   _templateObject$5 = function _templateObject() {
     return data;
@@ -776,26 +846,31 @@ function _templateObject$5() {
  * 여러개의 `Button` 컴포넌트를 보여주고 싶거나, 버튼을 우측에 정렬하고 싶을 땐 `ButtonGroup` 컴포넌트를 사용하세요.
  */
 // direction 에 따라 margin-left 또는 margin-top 설정
-var gapStyle = function gapStyle(direction, gap) {
-  var marginType = direction === 'row' ? 'marginLeft' : 'marginTop';
-  return css({
-    'button + button': _defineProperty({}, marginType, gap)
-  });
+var style$3 = function style(direction, gap) {
+  var marginType = direction === 'row' ? 'margin-left' : 'margin-top';
+  return css(_templateObject$5(), marginType, gap, gap);
 };
 
-var rightAlignStyle = css(_templateObject$5());
+var rightAlignStyle = css(_templateObject2$4());
 
 var ButtonGroup = function ButtonGroup(_ref) {
   var direction = _ref.direction,
       rightAlign = _ref.rightAlign,
       children = _ref.children,
       gap = _ref.gap,
+      width = _ref.width,
+      maxWidth = _ref.maxWidth,
+      minWidth = _ref.minWidth,
       className = _ref.className;
   return jsx("div", {
     css: [{
       display: 'flex',
       flexDirection: direction
-    }, gapStyle(direction, gap), rightAlign && rightAlignStyle],
+    }, style$3(direction, gap), {
+      width: width,
+      maxWidth: maxWidth,
+      minWidth: minWidth
+    }, rightAlign && rightAlignStyle],
     className: className
   }, children);
 };
@@ -825,10 +900,10 @@ function _templateObject3$3() {
   return data;
 }
 
-function _templateObject2$4() {
+function _templateObject2$5() {
   var data = _taggedTemplateLiteral(["\n  z-index: 10;\n  background: rgba(0, 0, 0, 0.5);\n"]);
 
-  _templateObject2$4 = function _templateObject2() {
+  _templateObject2$5 = function _templateObject2() {
     return data;
   };
 
@@ -845,7 +920,7 @@ function _templateObject$6() {
   return data;
 }
 var fullscreen = css(_templateObject$6());
-var darkLayer = css(_templateObject2$4());
+var darkLayer = css(_templateObject2$5());
 var whiteBoxWrapper = css(_templateObject3$3());
 var whiteBox = css(_templateObject4$3());
 
@@ -930,8 +1005,18 @@ Dialog.defaultProps = {
   confirmText: "확인"
 };
 
+function _templateObject10$1() {
+  var data = _taggedTemplateLiteral(["\n        position: fixed;\n      "]);
+
+  _templateObject10$1 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject9$1() {
-  var data = _taggedTemplateLiteral(["\n    background-color: #43425d;\n    .sidebar-header {\n      font-size: 0.9375rem;\n      letter-spacing: 0.1875rem;\n      color: white;\n      padding: 1.625rem 1.25rem;\n      margin: 0;\n    }\n    width: ", ";\n    height: ", ";\n    position: sticky;\n    top: 0;\n    left: 0;\n  "]);
+  var data = _taggedTemplateLiteral(["\n        position: sticky;\n      "]);
 
   _templateObject9$1 = function _templateObject9() {
     return data;
@@ -941,7 +1026,7 @@ function _templateObject9$1() {
 }
 
 function _templateObject8$2() {
-  var data = _taggedTemplateLiteral(["\n    transform: translateX(-100vw);\n    * {\n      opacity: 0;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n  padding: 20px;\n  position: relative;\n\n  .toggle-icon {\n    position: absolute;\n    top: 15px;\n    right: 15px;\n    cursor: pointer;\n  }\n"]);
 
   _templateObject8$2 = function _templateObject8() {
     return data;
@@ -951,7 +1036,7 @@ function _templateObject8$2() {
 }
 
 function _templateObject7$2() {
-  var data = _taggedTemplateLiteral(["\n    width: 0rem;\n    * {\n      opacity: 0;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    transform: translateX(-100vw);\n    * {\n      opacity: 0;\n    }\n  "]);
 
   _templateObject7$2 = function _templateObject7() {
     return data;
@@ -961,7 +1046,7 @@ function _templateObject7$2() {
 }
 
 function _templateObject6$2() {
-  var data = _taggedTemplateLiteral(["\n    transform: translateX(0rem);\n  "]);
+  var data = _taggedTemplateLiteral(["\n    width: 0rem;\n    * {\n      opacity: 0;\n    }\n  "]);
 
   _templateObject6$2 = function _templateObject6() {
     return data;
@@ -971,7 +1056,7 @@ function _templateObject6$2() {
 }
 
 function _templateObject5$3() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    transform: translateX(0rem);\n  "]);
 
   _templateObject5$3 = function _templateObject5() {
     return data;
@@ -981,7 +1066,7 @@ function _templateObject5$3() {
 }
 
 function _templateObject4$4() {
-  var data = _taggedTemplateLiteral(["\n    transition: transform 1s;\n    * {\n      transition: opacity 0.2s 1s;\n    }\n  "]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject4$4 = function _templateObject4() {
     return data;
@@ -991,7 +1076,7 @@ function _templateObject4$4() {
 }
 
 function _templateObject3$4() {
-  var data = _taggedTemplateLiteral(["\n    transition: width 0.5s ease-out;\n    * {\n      transition: opacity 0.2s ease-out;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    transition: transform 1s;\n    * {\n      transition: opacity 0.2s 1s;\n    }\n  "]);
 
   _templateObject3$4 = function _templateObject3() {
     return data;
@@ -1000,10 +1085,10 @@ function _templateObject3$4() {
   return data;
 }
 
-function _templateObject2$5() {
-  var data = _taggedTemplateLiteral([""]);
+function _templateObject2$6() {
+  var data = _taggedTemplateLiteral(["\n    transition: width 0.5s ease-out;\n    * {\n      transition: opacity 0.2s ease-out;\n    }\n  "]);
 
-  _templateObject2$5 = function _templateObject2() {
+  _templateObject2$6 = function _templateObject2() {
     return data;
   };
 
@@ -1011,7 +1096,7 @@ function _templateObject2$5() {
 }
 
 function _templateObject$7() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n  background-color: #43425d;\n  top: 0;\n  left: 0;\n"]);
 
   _templateObject$7 = function _templateObject() {
     return data;
@@ -1019,46 +1104,52 @@ function _templateObject$7() {
 
   return data;
 }
-// 제대로 스무스하게 할려면 트랜지션이 아니라 애니메이션으로 해야하는 듯
-var modes = {
-  mini: css(_templateObject$7()),
-  normal: css(_templateObject2$5())
-};
+var style$4 = css(_templateObject$7());
 var toggleAnimations = {
-  shrink: css(_templateObject3$4()),
-  slideIn: css(_templateObject4$4())
+  shrink: css(_templateObject2$6()),
+  slideIn: css(_templateObject3$4())
 };
 var show = {
-  shrink: css(_templateObject5$3()),
-  slideIn: css(_templateObject6$2())
+  shrink: css(_templateObject4$4()),
+  slideIn: css(_templateObject5$3())
 };
 var hide = {
-  shrink: css(_templateObject7$2()),
-  slideIn: css(_templateObject8$2())
+  shrink: css(_templateObject6$2()),
+  slideIn: css(_templateObject7$2())
 };
+var headerStyle = css(_templateObject8$2());
 /** `SideBar` 컴포넌트는 화면에 사이드바를 추가할 때 사용합니다.  */
 
 var SideBar = function SideBar(_ref) {
-  var mode = _ref.mode,
-      width = _ref.width,
+  var width = _ref.width,
+      minWidth = _ref.minWidth,
+      maxWidth = _ref.maxWidth,
       height = _ref.height,
       toggled = _ref.toggled,
       children = _ref.children,
-      title = _ref.title,
+      header = _ref.header,
+      sticky = _ref.sticky,
       toggleAnimation = _ref.toggleAnimation,
       className = _ref.className;
-  var style = css(_templateObject9$1(), width, height);
+  var stickyStyle = sticky ? css(_templateObject9$1()) : css(_templateObject10$1());
   return jsx("div", {
-    css: [style, modes[mode], toggleAnimations[toggleAnimation], toggled ? show[toggleAnimation] : hide[toggleAnimation]],
+    css: [style$4, stickyStyle, toggleAnimations[toggleAnimation], toggled ? show[toggleAnimation] : hide[toggleAnimation], {
+      width: width,
+      height: height,
+      minWidth: minWidth,
+      maxWidth: maxWidth
+    }],
     className: className
-  }, jsx("h1", {
-    className: "sidebar-header"
-  }, title), children);
+  }, jsx("div", {
+    css: headerStyle
+  }, header, jsx(Icon, {
+    className: "toggle-icon",
+    icon: "arrowLeft",
+    color: "white"
+  })), children);
 };
 
 SideBar.defaultProps = {
-  mode: "normal",
-  width: "16.25rem",
   height: "100vh",
   toggled: true
 };
@@ -1076,12 +1167,14 @@ function _templateObject$8() {
 /**
  * 여러개의 Input 컴포넌트로 이루어진 Form을 만들고 싶을 때 이 컴포넌트를 사용하세요.
  */
-var style$3 = css(_templateObject$8());
+var style$5 = css(_templateObject$8());
 
 var Form = function Form(_ref) {
   var title = _ref.title,
       subTitle = _ref.subTitle,
       width = _ref.width,
+      maxWidth = _ref.maxWidth,
+      minWidth = _ref.minWidth,
       height = _ref.height,
       bodyElements = _ref.bodyElements,
       footerElements = _ref.footerElements,
@@ -1089,8 +1182,10 @@ var Form = function Form(_ref) {
       redirectText = _ref.redirectText,
       redirectUrl = _ref.redirectUrl;
   return jsx("div", {
-    css: [style$3, {
+    css: [style$5, {
       width: width,
+      maxWidth: maxWidth,
+      minWidth: minWidth,
       height: height
     }],
     className: className
@@ -1132,10 +1227,10 @@ function _templateObject3$5() {
   return data;
 }
 
-function _templateObject2$6() {
+function _templateObject2$7() {
   var data = _taggedTemplateLiteral(["\n    box-shadow: 0px 2px 6px #0000000a;\n  "]);
 
-  _templateObject2$6 = function _templateObject2() {
+  _templateObject2$7 = function _templateObject2() {
     return data;
   };
 
@@ -1153,12 +1248,14 @@ function _templateObject$9() {
 }
 var elevations = {
   0: css(_templateObject$9()),
-  1: css(_templateObject2$6()),
+  1: css(_templateObject2$7()),
   2: css(_templateObject3$5())
 };
 
 var Card = function Card(_ref) {
   var width = _ref.width,
+      maxWidth = _ref.maxWidth,
+      minWidth = _ref.minWidth,
       height = _ref.height,
       padding = _ref.padding,
       children = _ref.children,
@@ -1173,6 +1270,8 @@ var Card = function Card(_ref) {
     className: className,
     css: [style, {
       width: width,
+      maxWidth: maxWidth,
+      minWidth: minWidth,
       height: height,
       padding: padding
     }, elevations[elevation]]
@@ -1197,19 +1296,23 @@ function _templateObject$a() {
 
   return data;
 }
-var style$4 = css(_templateObject$a());
+var style$6 = css(_templateObject$a());
 
 var DropDown = function DropDown(_ref) {
   var text = _ref.text,
       items = _ref.items,
       width = _ref.width,
+      maxWidth = _ref.maxWidth,
+      minWidth = _ref.minWidth,
       className = _ref.className;
   var listElements = items.map(function (item) {
     return jsx("li", null, item.text);
   });
   return jsx("div", {
-    css: [style$4, {
-      width: width
+    css: [style$6, {
+      width: width,
+      maxWidth: maxWidth,
+      minWidth: minWidth
     }],
     className: className
   }, jsx("button", null, jsx("span", null, text), jsx(Icon, {
@@ -1262,14 +1365,14 @@ function _templateObject$c() {
 
   return data;
 }
-var style$5 = css(_templateObject$c());
+var style$7 = css(_templateObject$c());
 
 var Table = function Table(_ref) {
   var children = _ref.children,
       width = _ref.width,
       className = _ref.className;
   return jsx("table", {
-    css: [style$5, {
+    css: [style$7, {
       width: width
     }],
     className: className

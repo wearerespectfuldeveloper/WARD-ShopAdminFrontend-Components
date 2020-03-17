@@ -6,8 +6,12 @@ export declare type FormProps = {
     title: string;
     /** 폼의 소제목 혹은 설명 */
     subTitle?: string;
-    /** 폼의 너비를 임의로 설정 */
-    width?: string | number;
+    /** 기본 width */
+    width?: string;
+    /** 최대 width */
+    maxWidth?: string;
+    /** 최소 width */
+    minWidth?: string;
     /** 폼의 높이를 임의로 설정 */
     height?: string | number;
     /** Form 안에 들어갈 Input 과 기타 요소들 */
@@ -21,7 +25,7 @@ export declare type FormProps = {
     className?: string;
 };
 declare const Form: {
-    ({ title, subTitle, width, height, bodyElements, footerElements, className, redirectText, redirectUrl }: FormProps): JSX.Element;
+    ({ title, subTitle, width, maxWidth, minWidth, height, bodyElements, footerElements, className, redirectText, redirectUrl }: FormProps): JSX.Element;
     defaultProps: {};
 };
 export default Form;

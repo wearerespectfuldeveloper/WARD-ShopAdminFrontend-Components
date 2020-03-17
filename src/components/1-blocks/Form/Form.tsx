@@ -8,8 +8,12 @@ export type FormProps = {
   title: string;
   /** 폼의 소제목 혹은 설명 */
   subTitle?: string;
-  /** 폼의 너비를 임의로 설정 */
-  width?: string | number;
+  /** 기본 width */
+  width?: string;
+  /** 최대 width */
+  maxWidth?: string;
+  /** 최소 width */
+  minWidth?: string;
   /** 폼의 높이를 임의로 설정 */
   height?: string | number;
   /** Form 안에 들어갈 Input 과 기타 요소들 */
@@ -73,6 +77,8 @@ const Form = ({
   title,
   subTitle,
   width,
+  maxWidth,
+  minWidth,
   height,
   bodyElements,
   footerElements,
@@ -81,7 +87,7 @@ const Form = ({
   redirectUrl
 }: FormProps) => {
   return (
-    <div css={[style, { width, height }]} className={className}>
+    <div css={[style, { width, maxWidth, minWidth, height }]} className={'$form ' + className}>
       <div className="form-header">
         <h1 className="title">{title}</h1>
         <p className="sub-title">{subTitle}</p>

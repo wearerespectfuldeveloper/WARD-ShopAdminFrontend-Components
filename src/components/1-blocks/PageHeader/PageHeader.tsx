@@ -36,7 +36,7 @@ const PageHeader = ({
     box-shadow: 0px 2px 6px #0000000a;
   `;
   return (
-    <div css={[style]} className={className}>
+    <div css={[style]} className={'$page-header ' + className}>
       <div className="left">{leftElement}</div>
 
       <div className="right">{rightElement}</div>

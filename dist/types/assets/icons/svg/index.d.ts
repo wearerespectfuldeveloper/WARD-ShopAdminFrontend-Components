@@ -9,3 +9,6 @@ export { ReactComponent as trendUp } from './trendUp.svg';
 export { ReactComponent as moneyBag } from './moneyBag.svg';
 export { ReactComponent as menu } from './menu.svg';
 export { ReactComponent as arrowDown } from './arrowDown.svg';
+export { ReactComponent as arrowLeft } from './arrowLeft.svg';
+export { ReactComponent as logo } from './logo.svg';
+export { ReactComponent as logoIcon } from './logoIcon.svg';

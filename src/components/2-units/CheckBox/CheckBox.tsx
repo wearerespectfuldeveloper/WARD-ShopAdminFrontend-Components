@@ -5,8 +5,12 @@ import React from 'react';
 type CheckBoxProps = {
   /** 이 체크박스가 지닐 id를 설정 */
   id: string;
-  /** 체크박스의 크기를 임의로 결정합니다. */
-  width?: string | number;
+  /** 기본 width */
+  width?: string;
+  /** 최대 width */
+  maxWidth?: string;
+  /** 최소 width */
+  minWidth?: string;
   /** 정해진 크기 만큼 텍스트 박스의 크기를 결정합니다. */
   size: "mini" | "medium" | "big";
   /** 체크박스의 색상 */
@@ -25,6 +29,8 @@ type CheckBoxProps = {
 
 const CheckBox = ({
   width,
+  maxWidth,
+  minWidth,
   size,
   color,
   sideText,
@@ -143,7 +149,7 @@ const CheckBox = ({
     : css``;
 
   return (
-    <div css={[style, { width }, sizes[size], disabledStyle]} className={className}>
+    <div css={[style, { width, minWidth, maxWidth }, sizes[size], disabledStyle]} className={className}>
       <input type="checkbox" id={id} disabled={disabled} />
       <label htmlFor={id}>{sideText}</label>
     </div>

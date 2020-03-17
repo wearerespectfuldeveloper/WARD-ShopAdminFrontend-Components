@@ -8,6 +8,12 @@ export type ButtonGroupProps = {
   rightAlign?: boolean;
   /** 버튼과 버튼사이의 간격을 설정합니다. */
   gap: number | string;
+  /** 기본 width */
+  width?: string;
+  /** 최대 width */
+  maxWidth?: string;
+  /** 최소 width */
+  minWidth?: string;
   /** 버튼 그룹에서 보여줄 버튼들 */
   children: React.ReactNode;
   /* 스타일 커스터마이징 하고싶을 때 사용 */
@@ -46,6 +52,9 @@ const ButtonGroup = ({
   rightAlign,
   children,
   gap,
+  width,
+  maxWidth,
+  minWidth,
   className
 }: ButtonGroupProps) => {
   return (
@@ -56,9 +65,14 @@ const ButtonGroup = ({
           flexDirection: direction
         },
         style(direction, gap),
+        {
+          width,
+          maxWidth,
+          minWidth
+        },
         rightAlign && rightAlignStyle
       ]}
-      className={className}
+      className={'$button-group ' + className}
     >
       {children}
     </div>

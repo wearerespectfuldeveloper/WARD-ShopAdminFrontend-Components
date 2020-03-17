@@ -1,31 +1,37 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import Icon from "../../3-design-tokens/SVGIcon/SVGIcon";
 
 type SideBarProps = {
   /** 사이드바 안의 내용 */
   children: React.ReactNode;
-  /** 사이드바의 타이틀 */
-  title: string;
-  /** 사이드바의 모드를 설정합니다. mini로 설정되면 너비가 최소한으로 줄어들며 글자는 사라지고 아이콘만이 보입니다. */
-  mode: "mini" | "normal";
   /** 사이드바를 화면에서 나타나거나 사리지게합니다 */
   toggled: boolean;
   /** 사이드바의 토글 동작을 설정합니다 */
   toggleAnimation: "shrink" | "slideIn";
-  /** 사이드바의 너비를 임의로 설정합니다. */
-  width?: string | number;
+  /** 기본 width */
+  width?: string;
+  /** 최대 width */
+  maxWidth?: string;
+  /** 최소 width */
+  minWidth?: string;
+  /** 사이드바의 맨 위에 위치할 요소 */
+  header?: React.ReactNode;
   /** 사이드바의 높이를 임의로 설정합니다. */
   height?: string | number;
-  /* 추가적인 스타일링을 적용하기 위한 클래스 */
+  /** 사이드바의 sticky 여부를 결정 */
+  sticky?: boolean;
+  /** 추가적인 스타일링을 적용하기 위한 클래스 */
   className?: string;
+  /** 토글 버튼이 수행할 함수 */
+  toggleFunc?: () => void;
 };
 
-// 제대로 스무스하게 할려면 트랜지션이 아니라 애니메이션으로 해야하는 듯
-
-const modes = {
-  mini: css``,
-  normal: css``
-};
+const style = css`
+  background-color: #43425d;
+  top: 0;
+  left: 0;
+`;
 
 const toggleAnimations = {
   shrink: css`
@@ -64,52 +70,65 @@ const hide = {
   `
 };
 
+const headerStyle = css`
+  padding: 20px;
+  position: relative;
+
+  .toggle-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+`;
+
 /** `SideBar` 컴포넌트는 화면에 사이드바를 추가할 때 사용합니다.  */
 const SideBar = ({
-  mode,
   width,
+  minWidth,
+  maxWidth,
   height,
   toggled,
   children,
-  title,
+  header,
+  sticky,
   toggleAnimation,
   className
 }: SideBarProps) => {
-  const style = css`
-    background-color: #43425d;
-    .sidebar-header {
-      font-size: 0.9375rem;
-      letter-spacing: 0.1875rem;
-      color: white;
-      padding: 1.625rem 1.25rem;
-      margin: 0;
-    }
-    width: ${width};
-    height: ${height};
-    position: sticky;
-    top: 0;
-    left: 0;
-  `;
+  const stickyStyle = sticky
+    ? css`
+        position: sticky;
+      `
+    : css`
+        position: fixed;
+      `;
 
   return (
     <div
       css={[
         style,
-        modes[mode],
+        stickyStyle,
         toggleAnimations[toggleAnimation],
-        toggled ? show[toggleAnimation] : hide[toggleAnimation]
+        toggled ? show[toggleAnimation] : hide[toggleAnimation],
+        {
+          width,
+          height,
+          minWidth,
+          maxWidth
+        }
       ]}
       className={className}
     >
-      <h1 className="sidebar-header">{title}</h1>
+      <div css={headerStyle}>
+        {header}
+        <Icon className="toggle-icon" icon="arrowLeft" color="white"></Icon>
+      </div>
       {children}
     </div>
   );
 };
 
 SideBar.defaultProps = {
-  mode: "normal",
-  width: "16.25rem",
   height: "100vh",
   toggled: true
 };

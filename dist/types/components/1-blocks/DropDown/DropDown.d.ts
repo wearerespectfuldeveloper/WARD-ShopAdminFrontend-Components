@@ -1,7 +1,11 @@
 /// <reference types="react" />
 declare type DropDownProps = {
-    /** 드랍다운의 너비를 임의로 설정 */
+    /** 기본 width */
     width?: string;
+    /** 최대 width */
+    maxWidth?: string;
+    /** 최소 width */
+    minWidth?: string;
     /** 드랍다운 버튼의 텍스트 */
     text: string;
     /** 드랍다운을 통해 보여줄 아이템들 */
@@ -12,7 +16,7 @@ declare type DropDownProps = {
     className?: string;
 };
 declare const DropDown: {
-    ({ text, items, width, className }: DropDownProps): JSX.Element;
+    ({ text, items, width, maxWidth, minWidth, className }: DropDownProps): JSX.Element;
     defaultProps: {};
 };
 export default DropDown;

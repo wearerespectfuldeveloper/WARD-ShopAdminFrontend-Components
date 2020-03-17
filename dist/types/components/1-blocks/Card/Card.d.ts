@@ -1,8 +1,12 @@
 /** @jsx jsx */
 import React from 'react';
 declare type CardProps = {
-    /** 카드의 너비를 임의로 설정 */
-    width?: string | number;
+    /** 기본 width */
+    width?: string;
+    /** 최대 width */
+    maxWidth?: string;
+    /** 최소 width */
+    minWidth?: string;
     /** 카드의 높이를 임의로 설정 */
     height?: string | number;
     /** 카드의 padding을 직접 설정합니다. 기본값은 상하좌우 전체 20px 입니다. */
@@ -22,7 +26,7 @@ declare type CardProps = {
     className?: string;
 };
 declare const Card: {
-    ({ width, height, padding, children, elevation, title, radius, sideContent, backgroundColor, className }: CardProps): JSX.Element;
+    ({ width, maxWidth, minWidth, height, padding, children, elevation, title, radius, sideContent, backgroundColor, className }: CardProps): JSX.Element;
     defaultProps: {
         elevation: string;
         radius: boolean;

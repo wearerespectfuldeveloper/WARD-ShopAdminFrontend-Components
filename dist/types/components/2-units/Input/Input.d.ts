@@ -1,7 +1,11 @@
 import React from 'react';
 declare type InputProps = {
-    /** Input 컴포넌트의 길이 */
-    width?: string | number;
+    /** 기본 width */
+    width?: string;
+    /** 최대 width */
+    maxWidth?: string;
+    /** 최소 width */
+    minWidth?: string;
     /** Input 태그의 타입 */
     inputType: 'text' | 'password';
     /** 값이 true 이면 Input 컴포넌트를 비활성화합니다 */
@@ -11,7 +15,7 @@ declare type InputProps = {
     className?: string;
 };
 declare const _default: React.MemoExoticComponent<{
-    ({ width, disabled, inputPlaceHolder, inputType, className }: InputProps): JSX.Element;
+    ({ width, maxWidth, minWidth, disabled, inputPlaceHolder, inputType, className }: InputProps): JSX.Element;
     defaultProps: {
         disabled: boolean;
     };

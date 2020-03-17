@@ -108,7 +108,7 @@ const Dialog = ({
             css={[fullscreen, darkLayer]}
             key={key}
             style={props}
-            className={className}
+            className={'$dialog ' + className}
           ></animated.div>
         ) : null
       )}

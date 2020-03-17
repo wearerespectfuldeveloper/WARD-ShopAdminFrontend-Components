@@ -3,8 +3,12 @@ import { jsx, css } from "@emotion/core";
 import Icon from "../../3-design-tokens/SVGIcon/SVGIcon";
 
 type DropDownProps = {
-  /** 드랍다운의 너비를 임의로 설정 */
+  /** 기본 width */
   width?: string;
+  /** 최대 width */
+  maxWidth?: string;
+  /** 최소 width */
+  minWidth?: string;
   /** 드랍다운 버튼의 텍스트 */
   text: string;
   /** 드랍다운을 통해 보여줄 아이템들 */
@@ -86,13 +90,14 @@ const style = css`
   }
 `;
 
-const DropDown = ({ text, items, width, className }: DropDownProps) => {
+const DropDown = ({ text, items, width, maxWidth, minWidth, className }: DropDownProps) => {
   const listElements = items.map(item => {
     return <li>{item.text}</li>;
   });
 
   return (
-    <div css={[style, { width }]} className={className}>
+    <div css={[style, { width, maxWidth, minWidth }]} className={
+      '$drop-down' + className}>
       <button>
         <span>{text}</span>
         <Icon icon="arrowDown" />
