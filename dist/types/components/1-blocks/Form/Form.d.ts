@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import './Form.scss';
 export declare type FormProps = {
     /** Children */
     children?: React.ReactNode;

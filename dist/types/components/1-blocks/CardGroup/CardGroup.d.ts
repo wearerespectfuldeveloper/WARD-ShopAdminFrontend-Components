@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import './CardGroup.scss';
 export declare type CardGroupProps = {
     /** 카드 그룹의 방향 */
     mode: 'row' | 'column' | 'mansory';

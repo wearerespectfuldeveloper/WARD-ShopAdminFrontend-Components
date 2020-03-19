@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import React from 'react';
+import React from "react";
 import { jsx, css } from "@emotion/core";
+import './Card.scss';
 
 type CardProps = {
   /** 기본 width */
@@ -54,36 +55,30 @@ const Card = ({
   className
 }: CardProps) => {
   const style = css`
-    padding: 20px;
     border-radius: ${radius ? "0.25rem" : "0rem"};
     background-color: ${backgroundColor};
 
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      h1 {
-        margin: 0;
-      }
-      ${
-        title
-          ? "border-bottom: 1px solid #eee; > h1 { padding-bottom: 1.4375rem; }"
-          : ""
-      }
-      }
-    }
-
-    .card-body {
-
+    &__header {
+      ${title
+        ? "border-bottom: 1px solid #eee; > h1 { padding-bottom: 1.4375rem; }"
+        : ""}
     }
   `;
 
   return (
-    <div className={'$card ' + className} css={[style, { width, maxWidth, minWidth, height, padding }, elevations[elevation]]}>
-      <div className="card-header">
+    <div
+      className={"_card " + className}
+      css={[
+        style,
+        { width, maxWidth, minWidth, height, padding },
+        elevations[elevation]
+      ]}
+    >
+      <div className="_card__header">
         <h1>{title}</h1>
         <div>{sideContent}</div>
       </div>
-      <div className="card-body">{children}</div>
+      <div className="_card__body">{children}</div>
     </div>
   );
 };

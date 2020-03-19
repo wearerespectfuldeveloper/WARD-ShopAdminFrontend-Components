@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import './Table.scss';
 
 type TableProps = {
   /** 테이블의 내용물 */
@@ -11,14 +12,12 @@ type TableProps = {
 };
 
 const style = css`
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
+  
 `;
 
 const Table = ({ children, width, className }: TableProps) => {
   return (
-    <table css={[style, { width }]} className={className}>
+    <table css={[style, { width }]} className={'_table ' + className}>
       {children}
     </table>
   );

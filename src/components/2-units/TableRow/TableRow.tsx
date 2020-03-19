@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import React from "react";
+import './TableRow.scss';
 
 type TableRowProps = {
   /** 테이블 행이 테이블 테이블 헤더의 행인지, 테이블 바디의 행인지를 설정 */
@@ -22,42 +23,15 @@ type TableRowProps = {
 
 const TableRow = ({ type, cellList, className }: TableRowProps) => {
   const style = css`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    th {
-      padding: 0.75rem 1.875rem;
-      text-align: center;
-    }
-    td {
-      padding: 1.25rem 1.875rem;
-      text-align: center;
-    }
     th,
     td {
       width: ${100 / cellList.length}%;
-      span {
-        font-size: 0.6875rem;
-      }
     }
 
     @media screen and (max-width: 325px) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      th {
-        text-align: center;
-      }
-      td {
-        text-align: center;
-      }
       th,
       td {
         width: ${100 / cellList.length}%;
-        span {
-          font-size: 0.6875rem;
-        }
       }
     }
   `;
@@ -122,7 +96,7 @@ const TableRow = ({ type, cellList, className }: TableRowProps) => {
         } else {
           stateColor = "255, 202, 131";
         }
-        element = item.data
+        element = item.data;
         cellStyle = css`
           font-weight: bold;
           span {
@@ -150,7 +124,7 @@ const TableRow = ({ type, cellList, className }: TableRowProps) => {
   });
 
   return (
-    <tr css={[style, rowStyle]} className={className}>
+    <tr css={[style, rowStyle]} className={"_table-row " + className}>
       {RowItems}
     </tr>
   );

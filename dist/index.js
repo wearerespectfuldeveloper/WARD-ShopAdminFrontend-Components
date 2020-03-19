@@ -491,7 +491,7 @@ function _templateObject2$1() {
 }
 
 function _templateObject$1() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  position: relative;\n  align-items: baseline;\n  cursor: pointer;\n  border-radius: 4px;\n  outline: none;\n  &:focus {\n    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);\n  }\n  &:disabled {\n    cursor: not-allowed;\n  }\n  svg {\n    width: 1rem;\n    margin-right: 1rem;\n  }\n  \n"]);
+  var data = _taggedTemplateLiteral(["\n  \n"]);
 
   _templateObject$1 = function _templateObject() {
     return data;
@@ -535,7 +535,7 @@ var Button = function Button(_ref) {
       maxWidth: maxWidth,
       minWidth: minWidth
     }, iconOnly && [iconOnlyStyle, iconOnlySizes[size]]],
-    className: className,
+    className: '_button ' + className,
     disabled: disabled,
     onClick: onClick
   }, children);
@@ -548,7 +548,7 @@ Button.defaultProps = {
 var Button$1 = React.memo(Button);
 
 function _templateObject$2() {
-  var data = _taggedTemplateLiteral(["\n  border: none;\n  border-bottom: 2px solid #E9E9F0;\n  padding: 9px;\n\n  &:disabled {\n    cursor: not-allowed;\n  }\n\n  &:focus {\n    outline: none;\n    border-bottom: 2px solid #43425D;\n  }\n  \n  transition: border-bottom 0.5s;\n"]);
+  var data = _taggedTemplateLiteral(["\n  \n"]);
 
   _templateObject$2 = function _templateObject() {
     return data;
@@ -573,7 +573,7 @@ var Input = function Input(_ref) {
       maxWidth: maxWidth,
       minWidth: minWidth
     }],
-    className: className,
+    className: '_input ' + className,
     placeholder: inputPlaceHolder,
     disabled: disabled
   });
@@ -655,7 +655,7 @@ function _templateObject2$2() {
 }
 
 function _templateObject$3() {
-  var data = _taggedTemplateLiteral(["\n  list-style: none;\n  cursor: pointer;\n\n  .content {\n    display: flex;\n    align-items: center;\n    position: relative;\n    padding: 1rem;\n\n    .trailing {\n      position: absolute;\n      right: 1.75rem;\n    }\n    .leading {\n      margin-right: 0.75rem;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  \n"]);
 
   _templateObject$3 = function _templateObject() {
     return data;
@@ -692,7 +692,7 @@ var ListItem = function ListItem(_ref) {
       maxWidth: maxWidth,
       minWidth: minWidth
     }, themes$1[theme], borders[border]],
-    className: className
+    className: '_list-item ' + className
   }, jsx("div", {
     className: "content"
   }, jsx("div", {
@@ -749,7 +749,7 @@ function _templateObject2$3() {
 }
 
 function _templateObject$4() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    th {\n      padding: 0.75rem 1.875rem;\n      text-align: center;\n    }\n    td {\n      padding: 1.25rem 1.875rem;\n      text-align: center;\n    }\n    th,\n    td {\n      width: ", "%;\n      span {\n        font-size: 0.6875rem;\n      }\n    }\n\n    @media screen and (max-width: 325px) {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      align-items: center;\n      th {\n        text-align: center;\n      }\n      td {\n        text-align: center;\n      }\n      th,\n      td {\n        width: ", "%;\n        span {\n          font-size: 0.6875rem;\n        }\n      }\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    th,\n    td {\n      width: ", "%;\n    }\n\n    @media screen and (max-width: 325px) {\n      th,\n      td {\n        width: ", "%;\n      }\n    }\n  "]);
 
   _templateObject$4 = function _templateObject() {
     return data;
@@ -813,7 +813,7 @@ var TableRow = function TableRow(_ref) {
   });
   return jsx("tr", {
     css: [style, rowStyle],
-    className: className
+    className: "_table-row " + className
   }, RowItems);
 };
 
@@ -871,7 +871,7 @@ var ButtonGroup = function ButtonGroup(_ref) {
       maxWidth: maxWidth,
       minWidth: minWidth
     }, rightAlign && rightAlignStyle],
-    className: className
+    className: '_button-group ' + className
   }, children);
 };
 
@@ -973,7 +973,7 @@ var Dialog = function Dialog(_ref) {
       css: [fullscreen, darkLayer],
       key: key,
       style: props,
-      className: className
+      className: '_dialog ' + className
     }) : null;
   }), slideUpTransition.map(function (_ref3) {
     var item = _ref3.item,
@@ -1005,38 +1005,8 @@ Dialog.defaultProps = {
   confirmText: "확인"
 };
 
-function _templateObject10$1() {
-  var data = _taggedTemplateLiteral(["\n        position: fixed;\n      "]);
-
-  _templateObject10$1 = function _templateObject10() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject9$1() {
-  var data = _taggedTemplateLiteral(["\n        position: sticky;\n      "]);
-
-  _templateObject9$1 = function _templateObject9() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject8$2() {
-  var data = _taggedTemplateLiteral(["\n  padding: 20px;\n  position: relative;\n\n  .toggle-icon {\n    position: absolute;\n    top: 15px;\n    right: 15px;\n    cursor: pointer;\n  }\n"]);
-
-  _templateObject8$2 = function _templateObject8() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject7$2() {
-  var data = _taggedTemplateLiteral(["\n    transform: translateX(-100vw);\n    * {\n      opacity: 0;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n        position: fixed;\n      "]);
 
   _templateObject7$2 = function _templateObject7() {
     return data;
@@ -1046,7 +1016,7 @@ function _templateObject7$2() {
 }
 
 function _templateObject6$2() {
-  var data = _taggedTemplateLiteral(["\n    width: 0rem;\n    * {\n      opacity: 0;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n        position: sticky;\n      "]);
 
   _templateObject6$2 = function _templateObject6() {
     return data;
@@ -1056,7 +1026,7 @@ function _templateObject6$2() {
 }
 
 function _templateObject5$3() {
-  var data = _taggedTemplateLiteral(["\n    transform: translateX(0rem);\n  "]);
+  var data = _taggedTemplateLiteral(["\n    z-index: 0;\n\n    transition: transform 0.5s ease-out;\n    * {\n      transition: opacity 0.2s;\n    }\n    transform: translateX(-110%);\n    * {\n      opacity: 0;\n    }\n  "]);
 
   _templateObject5$3 = function _templateObject5() {
     return data;
@@ -1066,7 +1036,7 @@ function _templateObject5$3() {
 }
 
 function _templateObject4$4() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    z-index: 0;\n    transition: width 0.5s ease-out 0.2s;\n    * {\n      transition: opacity 0.2s ease-out;\n    }\n    width: 0;\n    min-width: 0;\n    max-width: 0;\n\n    * {\n      opacity: 0;\n    }\n  "]);
 
   _templateObject4$4 = function _templateObject4() {
     return data;
@@ -1076,7 +1046,7 @@ function _templateObject4$4() {
 }
 
 function _templateObject3$4() {
-  var data = _taggedTemplateLiteral(["\n    transition: transform 1s;\n    * {\n      transition: opacity 0.2s 1s;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    z-index: 1000;\n    transition: transform 0.5s ease-out 0.2s;\n    * {\n      transition: opacity 0.2s 0.5s;\n    }\n    transform: translateX(0);\n  "]);
 
   _templateObject3$4 = function _templateObject3() {
     return data;
@@ -1086,7 +1056,7 @@ function _templateObject3$4() {
 }
 
 function _templateObject2$6() {
-  var data = _taggedTemplateLiteral(["\n    transition: width 0.5s ease-out;\n    * {\n      transition: opacity 0.2s ease-out;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    z-index: 1000;\n    transition: width 0.5s ease-out;\n    * {\n      transition: opacity 0.2s ease-out 0.5s;\n    }\n  "]);
 
   _templateObject2$6 = function _templateObject2() {
     return data;
@@ -1096,7 +1066,7 @@ function _templateObject2$6() {
 }
 
 function _templateObject$7() {
-  var data = _taggedTemplateLiteral(["\n  background-color: #43425d;\n  top: 0;\n  left: 0;\n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject$7 = function _templateObject() {
     return data;
@@ -1105,19 +1075,14 @@ function _templateObject$7() {
   return data;
 }
 var style$4 = css(_templateObject$7());
-var toggleAnimations = {
+var show = {
   shrink: css(_templateObject2$6()),
   slideIn: css(_templateObject3$4())
 };
-var show = {
+var hide = {
   shrink: css(_templateObject4$4()),
   slideIn: css(_templateObject5$3())
 };
-var hide = {
-  shrink: css(_templateObject6$2()),
-  slideIn: css(_templateObject7$2())
-};
-var headerStyle = css(_templateObject8$2());
 /** `SideBar` 컴포넌트는 화면에 사이드바를 추가할 때 사용합니다.  */
 
 var SideBar = function SideBar(_ref) {
@@ -1131,22 +1096,18 @@ var SideBar = function SideBar(_ref) {
       sticky = _ref.sticky,
       toggleAnimation = _ref.toggleAnimation,
       className = _ref.className;
-  var stickyStyle = sticky ? css(_templateObject9$1()) : css(_templateObject10$1());
+  var stickyStyle = sticky ? css(_templateObject6$2()) : css(_templateObject7$2());
   return jsx("div", {
-    css: [style$4, stickyStyle, toggleAnimations[toggleAnimation], toggled ? show[toggleAnimation] : hide[toggleAnimation], {
+    css: [style$4, {
       width: width,
       height: height,
       minWidth: minWidth,
       maxWidth: maxWidth
-    }],
-    className: className
+    }, stickyStyle, toggled ? show[toggleAnimation] : hide[toggleAnimation]],
+    className: "_side-bar " + className
   }, jsx("div", {
-    css: headerStyle
-  }, header, jsx(Icon, {
-    className: "toggle-icon",
-    icon: "arrowLeft",
-    color: "white"
-  })), children);
+    className: "_side-bar__header"
+  }, header), children);
 };
 
 SideBar.defaultProps = {
@@ -1155,7 +1116,7 @@ SideBar.defaultProps = {
 };
 
 function _templateObject$8() {
-  var data = _taggedTemplateLiteral(["\n  backroud-color: white;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n\n  .form-header {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    margin-bottom: 55px;\n\n    .title {\n      margin-bottom: 4px;\n    }\n    .sub-title {\n    }\n  }\n\n  .form-body {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    margin-bottom: 39px;\n\n    > input {\n      margin-bottom: 45px;\n    }\n  }\n\n  .form-footer {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    > a {\n      margin-top: 39px;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  \n"]);
 
   _templateObject$8 = function _templateObject() {
     return data;
@@ -1188,7 +1149,7 @@ var Form = function Form(_ref) {
       minWidth: minWidth,
       height: height
     }],
-    className: className
+    className: '_form ' + className
   }, jsx("div", {
     className: "form-header"
   }, jsx("h1", {
@@ -1208,7 +1169,7 @@ var Form = function Form(_ref) {
 Form.defaultProps = {};
 
 function _templateObject4$5() {
-  var data = _taggedTemplateLiteral(["\n    padding: 20px;\n    border-radius: ", ";\n    background-color: ", ";\n\n    .card-header {\n      display: flex;\n      justify-content: space-between;\n      h1 {\n        margin: 0;\n      }\n      ", "\n      }\n    }\n\n    .card-body {\n\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    border-radius: ", ";\n    background-color: ", ";\n\n    &__header {\n      ", "\n    }\n  "]);
 
   _templateObject4$5 = function _templateObject4() {
     return data;
@@ -1267,7 +1228,7 @@ var Card = function Card(_ref) {
       className = _ref.className;
   var style = css(_templateObject4$5(), radius ? "0.25rem" : "0rem", backgroundColor, title ? "border-bottom: 1px solid #eee; > h1 { padding-bottom: 1.4375rem; }" : "");
   return jsx("div", {
-    className: className,
+    className: "_card " + className,
     css: [style, {
       width: width,
       maxWidth: maxWidth,
@@ -1276,9 +1237,9 @@ var Card = function Card(_ref) {
       padding: padding
     }, elevations[elevation]]
   }, jsx("div", {
-    className: "card-header"
+    className: "_card__header"
   }, jsx("h1", null, title), jsx("div", null, sideContent)), jsx("div", {
-    className: "card-body"
+    className: "_card__body"
   }, children));
 };
 
@@ -1288,7 +1249,7 @@ Card.defaultProps = {
 };
 
 function _templateObject$a() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  button {\n    cursor: pointer;\n    background-color: #ffffff;\n    border-radius: 4px;\n    padding: 9px 15px;\n    color: rgba(77, 79, 92, 0.5);\n    border: 1px solid rgba(77, 79, 92, 0.5);\n\n    path {\n      stroke: rgba(77, 79, 92, 0.5);\n    }\n\n    transition: all 0.5s;\n\n    svg {\n      transition: all 0.5s;\n    }\n\n    + ul {\n      display: none;\n    }\n\n    &:focus {\n      border: 1px solid #3b86ff;\n      color: #3b86ff;\n      outline: none;\n\n      svg {\n        transform: rotate(180deg);\n        path {\n          stroke: #3b86ff;\n        }\n      }\n\n      + ul {\n        display: block;\n      }\n    }\n\n    span {\n      margin-right: 0.5625rem;\n    }\n  }\n\n  ul {\n    position: absolute;\n    top: 70%;\n    width: 100%;\n    padding: 0;\n    list-style: none;\n    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);\n    border: 1px solid rgba(233, 233, 240, 1);\n\n    li {\n      cursor: pointer;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      padding: 0.375rem;\n      color: rgba(77, 79, 92, 0.5);\n      transition: all 0.3s;\n      &:hover {\n        color: rgba(77, 79, 92, 1);\n        background-color: #e9e9f0;\n      }\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  \n"]);
 
   _templateObject$a = function _templateObject() {
     return data;
@@ -1314,7 +1275,7 @@ var DropDown = function DropDown(_ref) {
       maxWidth: maxWidth,
       minWidth: minWidth
     }],
-    className: className
+    className: '_drop-down ' + className
   }, jsx("button", null, jsx("span", null, text), jsx(Icon, {
     icon: "arrowDown"
   })), jsx("ul", null, listElements));
@@ -1323,7 +1284,7 @@ var DropDown = function DropDown(_ref) {
 DropDown.defaultProps = {};
 
 function _templateObject$b() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 1rem 1.25rem;\n    color: ", ";\n    background-color: ", ";\n    ", ";\n    box-shadow: 0px 2px 6px #0000000a;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    color: ", ";\n    background-color: ", ";\n    ", ";\n    box-shadow: 0px 2px 6px #0000000a;\n    height: ", ";\n  "]);
 
   _templateObject$b = function _templateObject() {
     return data;
@@ -1338,16 +1299,24 @@ var PageHeader = function PageHeader(_ref) {
       leftElement = _ref.leftElement,
       rightElement = _ref.rightElement,
       sticky = _ref.sticky,
+      logo = _ref.logo,
+      height = _ref.height,
       className = _ref.className;
-  var style = css(_templateObject$b(), color, backgroundColor, sticky ? "position: sticky; top: 0" : "");
-  return jsx("div", {
+  var style = css(_templateObject$b(), color, backgroundColor, sticky ? "position: sticky; top: 0;" : "position: fixed; top: 0;", height);
+  return jsx("header", {
     css: [style],
-    className: className
+    className: "_page-header " + className
+  }, jsx("nav", {
+    className: "_page-header__contents"
   }, jsx("div", {
-    className: "left"
+    className: "_page-header__left--items"
   }, leftElement), jsx("div", {
-    className: "right"
-  }, rightElement));
+    className: "_page-header__logo"
+  }, logo), jsx("div", {
+    className: "_page-header__spacer"
+  }), jsx("div", {
+    className: "_page-header__right--items"
+  }, rightElement)));
 };
 
 PageHeader.defaultProps = {
@@ -1357,7 +1326,7 @@ PageHeader.defaultProps = {
 };
 
 function _templateObject$c() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 0.9rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n  \n"]);
 
   _templateObject$c = function _templateObject() {
     return data;
@@ -1375,10 +1344,29 @@ var Table = function Table(_ref) {
     css: [style$7, {
       width: width
     }],
-    className: className
+    className: '_table ' + className
   }, children);
 };
 
 Table.defaultProps = {};
 
-export { Button$1 as Button, ButtonGroup, Card, Dialog, DropDown, Form, Icon, Input$1 as Input, ListItem$1 as ListItem, PageHeader, SideBar, Table, TableRow$1 as TableRow };
+/** @jsx jsx */
+
+var BackDrop = function BackDrop(_ref) {
+  var click = _ref.click,
+      className = _ref.className,
+      backgroundColor = _ref.backgroundColor;
+  return jsx("div", {
+    className: "_back-drop " + className,
+    css: [{
+      backgroundColor: backgroundColor
+    }],
+    onClick: click
+  });
+};
+
+BackDrop.defaultProps = {
+  backgroundColor: 'rgba(0, 0, 0, 0.3)'
+};
+
+export { BackDrop, Button$1 as Button, ButtonGroup, Card, Dialog, DropDown, Form, Icon, Input$1 as Input, ListItem$1 as ListItem, PageHeader, SideBar, Table, TableRow$1 as TableRow };

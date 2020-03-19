@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import './DropDown.scss';
 declare type DropDownProps = {
     /** 기본 width */
     width?: string;

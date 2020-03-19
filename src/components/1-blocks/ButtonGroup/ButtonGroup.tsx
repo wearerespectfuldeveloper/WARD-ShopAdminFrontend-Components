@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
+import './ButtonGroup.scss';
 
 export type ButtonGroupProps = {
   /** 버튼을 보여줄 방향 */
@@ -72,7 +73,7 @@ const ButtonGroup = ({
         },
         rightAlign && rightAlignStyle
       ]}
-      className={'$button-group ' + className}
+      className={'_button-group ' + className}
     >
       {children}
     </div>

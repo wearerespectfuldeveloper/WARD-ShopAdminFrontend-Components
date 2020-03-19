@@ -5,9 +5,14 @@ import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Unit|BackDrop',
+  title: 'Block|BackDrop',
   component: BackDrop,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
+  parameters: {
+    docs: {
+      inlineStories: false
+    }
+  }
 };
 
 export const backDrop = () => {

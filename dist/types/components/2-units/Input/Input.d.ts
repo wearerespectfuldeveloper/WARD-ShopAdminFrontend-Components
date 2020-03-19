@@ -1,4 +1,5 @@
 import React from 'react';
+import './Input.scss';
 declare type InputProps = {
     /** 기본 width */
     width?: string;

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import Card from '../Card/Card';
+import './CardGroup.scss';
 
 export type CardGroupProps = {
   /** 카드 그룹의 방향 */
@@ -34,7 +35,7 @@ const CardGroup = ({
   `
 
   return (
-    <div css={style}>
+    <div className={'_card-group ' + className} css={style}>
       test
     </div>
   )

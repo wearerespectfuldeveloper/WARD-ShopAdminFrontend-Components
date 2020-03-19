@@ -7,7 +7,7 @@ import { withKnobs, text, radios, boolean } from '@storybook/addon-knobs';
 export default {
   title: 'Block|ButtonGroup',
   component: ButtonGroup,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
 };
 
 export const buttonGroup = () => {

@@ -1,0 +1,20 @@
+._button {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: baseline;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+  &:focus {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+  svg {
+    width: 1rem;
+    margin-right: 1rem;
+  }
+  
+}

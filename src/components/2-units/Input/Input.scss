@@ -1,0 +1,16 @@
+._input {
+  border: none;
+  border-bottom: 2px solid #E9E9F0;
+  padding: 9px;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid #43425D;
+  }
+  
+  transition: border-bottom 0.5s;
+}

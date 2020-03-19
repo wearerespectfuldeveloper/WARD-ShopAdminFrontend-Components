@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import Icon from "../../3-design-tokens/SVGIcon/SVGIcon";
+import "./SideBar.scss";
 
 type SideBarProps = {
   /** 사이드바 안의 내용 */
@@ -27,60 +28,55 @@ type SideBarProps = {
   toggleFunc?: () => void;
 };
 
-const style = css`
-  background-color: #43425d;
-  top: 0;
-  left: 0;
-`;
+const style = css``;
 
-const toggleAnimations = {
+const show = {
   shrink: css`
+    z-index: 1000;
+
     transition: width 0.5s ease-out;
     * {
-      transition: opacity 0.2s ease-out;
+      transition: opacity 0.2s ease-out 0.5s;
     }
   `,
   slideIn: css`
-    transition: transform 1s;
-    * {
-      transition: opacity 0.2s 1s;
-    }
-  `
-};
+    z-index: 1000;
 
-const show = {
-  shrink: css``,
-  slideIn: css`
-    transform: translateX(0rem);
+    transition: transform 0.5s ease-out 0.2s;
+    * {
+      transition: opacity 0.2s 0.5s;
+    }
+    transform: translateX(0);
   `
 };
 
 const hide = {
   shrink: css`
-    width: 0rem;
+    z-index: 0;
+    transition: width 0.5s ease-out 0.2s;
+    * {
+      transition: opacity 0.2s ease-out;
+    }
+    width: 0;
+    min-width: 0;
+
     * {
       opacity: 0;
     }
   `,
   slideIn: css`
-    transform: translateX(-100vw);
+    z-index: 0;
+
+    transition: transform 0.5s ease-out;
+    * {
+      transition: opacity 0.2s;
+    }
+    transform: translateX(-110%);
     * {
       opacity: 0;
     }
   `
 };
-
-const headerStyle = css`
-  padding: 20px;
-  position: relative;
-
-  .toggle-icon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-  }
-`;
 
 /** `SideBar` 컴포넌트는 화면에 사이드바를 추가할 때 사용합니다.  */
 const SideBar = ({
@@ -107,22 +103,18 @@ const SideBar = ({
     <div
       css={[
         style,
-        stickyStyle,
-        toggleAnimations[toggleAnimation],
-        toggled ? show[toggleAnimation] : hide[toggleAnimation],
         {
           width,
           height,
           minWidth,
           maxWidth
-        }
+        },
+        stickyStyle,
+        toggled ? show[toggleAnimation] : hide[toggleAnimation]
       ]}
-      className={className}
+      className={"_side-bar " + className}
     >
-      <div css={headerStyle}>
-        {header}
-        <Icon className="toggle-icon" icon="arrowLeft" color="white"></Icon>
-      </div>
+      <div className="_side-bar__header">{header}</div>
       {children}
     </div>
   );

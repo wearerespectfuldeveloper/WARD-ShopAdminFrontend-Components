@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import React from 'react';
+import React from "react";
+import './Card.scss';
 declare type CardProps = {
     /** 기본 width */
     width?: string;

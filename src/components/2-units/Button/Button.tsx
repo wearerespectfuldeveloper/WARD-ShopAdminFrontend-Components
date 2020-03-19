@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import React from 'react';
+import './Button.scss';
 
 type ButtonProps = {
   /** 버튼 안의 내용 */
@@ -26,23 +27,6 @@ type ButtonProps = {
 };
 
 const style = css`
-  display: flex;
-  justify-content: center;
-  position: relative;
-  align-items: baseline;
-  cursor: pointer;
-  border-radius: 4px;
-  outline: none;
-  &:focus {
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-  }
-  &:disabled {
-    cursor: not-allowed;
-  }
-  svg {
-    width: 1rem;
-    margin-right: 1rem;
-  }
   
 `;
 
@@ -159,7 +143,7 @@ const Button = ({
         { width, maxWidth, minWidth },
         iconOnly && [iconOnlyStyle, iconOnlySizes[size]]
       ]}
-      className={className}
+      className={'_button ' + className}
       disabled={disabled}
       onClick={onClick}
     >

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import React from 'react';
+import './CheckBox.scss';
 
 type CheckBoxProps = {
   /** 이 체크박스가 지닐 id를 설정 */
@@ -149,7 +150,7 @@ const CheckBox = ({
     : css``;
 
   return (
-    <div css={[style, { width, minWidth, maxWidth }, sizes[size], disabledStyle]} className={className}>
+    <div css={[style, { width, minWidth, maxWidth }, sizes[size], disabledStyle]} className={'_check-box ' + className}>
       <input type="checkbox" id={id} disabled={disabled} />
       <label htmlFor={id}>{sideText}</label>
     </div>

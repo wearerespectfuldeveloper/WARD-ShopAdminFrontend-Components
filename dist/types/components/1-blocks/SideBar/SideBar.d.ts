@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import "./SideBar.scss";
 declare type SideBarProps = {
     /** 사이드바 안의 내용 */
     children: React.ReactNode;

@@ -18,12 +18,15 @@ export const pageHeader = () => {
   const leftElement = <Icon icon="menu"></Icon>
   const rightElement = <Icon icon="customers"></Icon>
 
+  const sticky = boolean('sticky', false);
+
   return (
     <div style={{height: "150vh"}}>
       <PageHeader
         backgroundColor="white"
         leftElement={leftElement}
         rightElement={rightElement}
+        sticky={true}
       />  
     </div>
     

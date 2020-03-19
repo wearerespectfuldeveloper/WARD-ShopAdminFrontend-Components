@@ -1,4 +1,5 @@
 import React from 'react';
+import './Button.scss';
 declare type ButtonProps = {
     /** 버튼 안의 내용 */
     children: React.ReactNode;

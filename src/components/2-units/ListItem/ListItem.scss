@@ -1,0 +1,19 @@
+._list-item {
+  list-style: none;
+  cursor: pointer;
+
+  .content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+
+    .trailing {
+      position: absolute;
+      right: 1.75rem;
+    }
+    .leading {
+      margin-right: 0.75rem;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import './TableRow.scss';
 declare type TableRowProps = {
     /** 테이블 행이 테이블 테이블 헤더의 행인지, 테이블 바디의 행인지를 설정 */
     type: "head" | "body";

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import React from 'react';
+import './Input.scss';
 
 type InputProps = {
   /** 기본 width */
@@ -20,20 +21,7 @@ type InputProps = {
 }
 
 const style = css`
-  border: none;
-  border-bottom: 2px solid #E9E9F0;
-  padding: 9px;
-
-  &:disabled {
-    cursor: not-allowed;
-  }
-
-  &:focus {
-    outline: none;
-    border-bottom: 2px solid #43425D;
-  }
   
-  transition: border-bottom 0.5s;
 `
 const Input = ({
   width,
@@ -51,7 +39,7 @@ const Input = ({
         style,
         {width, maxWidth, minWidth}
       ]}
-      className={className}
+      className={'_input ' + className}
       placeholder={inputPlaceHolder}
       disabled={disabled}
     />

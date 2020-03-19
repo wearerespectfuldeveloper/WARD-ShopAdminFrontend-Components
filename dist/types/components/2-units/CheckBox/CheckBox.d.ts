@@ -1,4 +1,5 @@
 import React from 'react';
+import './CheckBox.scss';
 declare type CheckBoxProps = {
     /** 이 체크박스가 지닐 id를 설정 */
     id: string;

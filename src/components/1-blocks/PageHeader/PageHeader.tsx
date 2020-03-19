@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import { ReadStream } from "tty";
+import "./PageHeader.scss";
 
 type PageHeaderProps = {
   /** 페이지 헤더의 글자색상을 설정 */
@@ -11,8 +11,12 @@ type PageHeaderProps = {
   leftElement: React.ReactNode;
   /** 페이지 헤더의 오른쪽을 차지할 요소 */
   rightElement: React.ReactNode;
-  /** Sticky 헤더의 적용 여부 */
-  sticky: boolean;
+  /** sticky 헤더의 적용 여부 */
+  sticky?: boolean;
+  /** 페이지 헤더에 넣을 로고 */
+  logo?: React.ReactNode;
+  /** 페이지 헤더의 높이 */
+  height?: string;
   /* 추가적인 스타일링을 적용하기 위한 클래스 */
   className?: string;
 };
@@ -23,24 +27,26 @@ const PageHeader = ({
   leftElement,
   rightElement,
   sticky,
+  logo,
+  height,
   className
 }: PageHeaderProps) => {
   const style = css`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.25rem;
     color: ${color};
     background-color: ${backgroundColor};
-    ${sticky ? "position: sticky; top: 0" : ""};
+    ${sticky ? "position: sticky; top: 0;" : "position: fixed; top: 0;"};
     box-shadow: 0px 2px 6px #0000000a;
+    height: ${height};
   `;
   return (
-    <div css={[style]} className={'$page-header ' + className}>
-      <div className="left">{leftElement}</div>
-
-      <div className="right">{rightElement}</div>
-    </div>
+    <header css={[style]} className={"_page-header " + className}>
+      <nav className="_page-header__contents">
+        <div className="_page-header__left--items">{leftElement}</div>
+        <div className="_page-header__logo">{logo}</div>
+        <div className="_page-header__spacer"></div>
+        <div className="_page-header__right--items">{rightElement}</div>
+      </nav>
+    </header>
   );
 };
 

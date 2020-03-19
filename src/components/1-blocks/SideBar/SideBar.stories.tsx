@@ -56,6 +56,7 @@ export const sideBar = () => {
   const toggled = boolean("toggled", true);
   const sticky = boolean("sticky", true);
   const width = text("width", "16.25rem");
+  const minWidth = text('minWidth', '16rem');
   const height = text("height", "100vh");
   const toggleAnimation = select(
     "slideAnimation",
@@ -68,6 +69,7 @@ export const sideBar = () => {
       toggleAnimation={toggleAnimation}
       header={logo}
       width={width}
+      minWidth={minWidth}
       height={height}
       toggled={toggled}
       sticky={sticky}

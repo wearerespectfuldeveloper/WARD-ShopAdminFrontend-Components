@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import './ButtonGroup.scss';
 export declare type ButtonGroupProps = {
     /** 버튼을 보여줄 방향 */
     direction: 'row' | 'column';

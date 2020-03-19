@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
+import './Form.scss';
 
 export type FormProps = {
   /** Children */
@@ -33,44 +34,7 @@ export type FormProps = {
  */
 
 const style = css`
-  backroud-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .form-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 55px;
-
-    .title {
-      margin-bottom: 4px;
-    }
-    .sub-title {
-    }
-  }
-
-  .form-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin-bottom: 39px;
-
-    > input {
-      margin-bottom: 45px;
-    }
-  }
-
-  .form-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    > a {
-      margin-top: 39px;
-    }
-  }
+  
 `;
 
 const Form = ({
@@ -87,7 +51,7 @@ const Form = ({
   redirectUrl
 }: FormProps) => {
   return (
-    <div css={[style, { width, maxWidth, minWidth, height }]} className={'$form ' + className}>
+    <div css={[style, { width, maxWidth, minWidth, height }]} className={'_form ' + className}>
       <div className="form-header">
         <h1 className="title">{title}</h1>
         <p className="sub-title">{subTitle}</p>
