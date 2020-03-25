@@ -24,17 +24,19 @@ export const dropDown = () => {
   const width = text("width", "150px");
 
   return (
-    <DropDown
-      text={dropDownText}
-      width={width}
-      items={[
-        { text: "DropDown", clickFunc: () => {} },
-        { text: "DropDown", clickFunc: () => {} },
-        { text: "DropDown", clickFunc: () => {} },
-        { text: "DropDown", clickFunc: () => {} },
-        { text: "DropDown", clickFunc: () => {} }
-      ]}
-    />
+    <div style={{ height: "500px", backgroundColor: '#eee' }}>
+      <DropDown
+        text={dropDownText}
+        width={width}
+        items={[
+          { text: "DropDown", clickFunc: () => {} },
+          { text: "DropDown", clickFunc: () => {} },
+          { text: "DropDown", clickFunc: () => {} },
+          { text: "DropDown", clickFunc: () => {} },
+          { text: "DropDown", clickFunc: () => {} }
+        ]}
+      />
+    </div>
   );
 };
 

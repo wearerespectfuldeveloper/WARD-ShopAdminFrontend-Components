@@ -11,4 +11,5 @@ export { ReactComponent as menu } from './menu.svg';
 export { ReactComponent as arrowDown } from './arrowDown.svg';
 export { ReactComponent as arrowLeft } from './arrowLeft.svg';
 export { ReactComponent as logo } from './logo.svg';
-export { ReactComponent as logoIcon } from './logoIcon.svg';
+export { ReactComponent as close } from './close.svg';
+export { ReactComponent as trash } from './trash.svg';

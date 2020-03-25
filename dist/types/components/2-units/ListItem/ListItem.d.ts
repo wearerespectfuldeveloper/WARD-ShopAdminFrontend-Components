@@ -1,5 +1,5 @@
 import React from "react";
-import './ListItem.scss';
+import "./ListItem.scss";
 declare type ListItemProps = {
     /** 기본 width */
     width?: string;

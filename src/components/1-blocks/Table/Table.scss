@@ -1,5 +1,23 @@
 ._table {
-  width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+
+  .row-container {
+    width: max-content;
+  }
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    height: 10px;
+    background: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 50px;
+    opacity: 0.4;
+  }
+  &::-webkit-scrollbar-track {
+    background: none;
+  }
 }

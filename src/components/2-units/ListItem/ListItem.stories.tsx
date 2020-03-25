@@ -62,7 +62,7 @@ export const listItemWitTrailing = () => {
   const theme = select('theme', ['light', 'dark'], 'dark');
   const border = select('border', ['top', 'right', 'bottom', 'left', 'none'], 'left');
 
-  const trailing = <Icon icon="customers"></Icon>
+  const trailing = <Icon icon="products"></Icon>
 
   return (
     <ListItem 

@@ -25,7 +25,14 @@ export const table = () => {
       />
       <TableRow
         cellList={[
-          { type: "picture", data: ["https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80", "자바 티셔츠"] },
+          {
+            type: "picture",
+            data: {
+              imageUrl:
+                "https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80",
+              title: "자바 티셔츠"
+            }
+          },
           { type: "text", data: "티셔츠" },
           { type: "price", data: "29300" },
           { type: "stock", data: "10" },
@@ -34,28 +41,33 @@ export const table = () => {
       />
       <TableRow
         cellList={[
-          { type: "picture", data: ["https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80", "자바 티셔츠"] },
+          {
+            type: "picture",
+            data: {
+              imageUrl:
+                "https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80",
+              title: "자바 티셔츠"
+            }
+          },
           { type: "text", data: "티셔츠" },
           { type: "price", data: "29300" },
-          { type: "stock", data: "200" },
+          { type: "stock", data: "10" },
           { type: "date", data: "2020-01-20" }
         ]}
       />
       <TableRow
         cellList={[
-          { type: "picture", data: ["https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80", "자바 티셔츠"] },
+          {
+            type: "picture",
+            data: {
+              imageUrl:
+                "https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80",
+              title: "자바 티셔츠"
+            }
+          },
           { type: "text", data: "티셔츠" },
           { type: "price", data: "29300" },
-          { type: "stock", data: "0" },
-          { type: "date", data: "2020-01-20" }
-        ]}
-      />
-      <TableRow
-        cellList={[
-          { type: "picture", data: ["https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80", "자바 티셔츠"] },
-          { type: "text", data: "티셔츠" },
-          { type: "price", data: "29300" },
-          { type: "stock", data: "60" },
+          { type: "stock", data: "10" },
           { type: "date", data: "2020-01-20" }
         ]}
       />

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import React from "react";
-import './ListItem.scss';
+import "./ListItem.scss";
 
 type ListItemProps = {
   /** 기본 width */
@@ -24,9 +24,7 @@ type ListItemProps = {
   className?: string;
 };
 
-const style = css`
-  
-`;
+const style = css``;
 
 const themes = {
   dark: css`
@@ -82,12 +80,20 @@ const ListItem = ({
 }: ListItemProps) => {
   return (
     <li
-      css={[style, { width, maxWidth, minWidth }, themes[theme], borders[border]]}
-      className={'_list-item ' + className}
+      css={[
+        style,
+        { width, maxWidth, minWidth },
+        themes[theme],
+        borders[border]
+      ]}
+      className={"_list-item " + className}
     >
-      <div className="content">
-        <div className="leading">{leading}</div>
-        {children}
+      <div className="content-wrapper">
+        <div className="content">
+          <div className="leading">{leading}</div>
+          {children}
+        </div>
+
         <div className="trailing">{trailing}</div>
       </div>
     </li>

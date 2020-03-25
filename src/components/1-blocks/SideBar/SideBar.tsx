@@ -34,7 +34,7 @@ const show = {
   shrink: css`
     z-index: 1000;
 
-    transition: width 0.5s ease-out;
+    transition: all 0.5s ease-out;
     * {
       transition: opacity 0.2s ease-out 0.5s;
     }
@@ -53,7 +53,7 @@ const show = {
 const hide = {
   shrink: css`
     z-index: 0;
-    transition: width 0.5s ease-out 0.2s;
+    transition: all 0.5s ease-out 0.2s;
     * {
       transition: opacity 0.2s ease-out;
     }
@@ -66,7 +66,6 @@ const hide = {
   `,
   slideIn: css`
     z-index: 0;
-
     transition: transform 0.5s ease-out;
     * {
       transition: opacity 0.2s;

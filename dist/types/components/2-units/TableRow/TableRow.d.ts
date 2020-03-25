@@ -1,5 +1,5 @@
 import React from "react";
-import './TableRow.scss';
+import "./TableRow.scss";
 declare type TableRowProps = {
     /** 테이블 행이 테이블 테이블 헤더의 행인지, 테이블 바디의 행인지를 설정 */
     type: "head" | "body";
@@ -9,19 +9,25 @@ declare type TableRowProps = {
      */
     cellList: Array<{
         type: "picture";
-        data: [string, string];
+        data: {
+            imageUrl: string | undefined;
+            title: string | undefined;
+        };
     } | {
         type: "text";
-        data: string;
+        data: string | undefined;
     } | {
         type: "price";
-        data: string | number;
+        data: string | number | undefined;
     } | {
         type: "stock";
-        data: string | number;
+        data: string | number | undefined;
     } | {
         type: "date";
-        data: string | number;
+        data: string | number | undefined;
+    } | {
+        type: "extra";
+        data: React.ReactNode;
     }>;
     className?: string;
 };

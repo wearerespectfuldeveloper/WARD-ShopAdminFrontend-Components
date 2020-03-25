@@ -2,18 +2,24 @@
   list-style: none;
   cursor: pointer;
 
-  .content {
+  .content-wrapper {
     display: flex;
     align-items: center;
-    position: relative;
-    padding: 1rem;
-
-    .trailing {
-      position: absolute;
-      right: 1.75rem;
-    }
-    .leading {
-      margin-right: 0.75rem;
+    
+    .content {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+  
+      .trailing {
+        margin-left: 0.75rem;
+      }
+      
+      .leading {
+        margin-right: 0.75rem;
+      }
     }
   }
+
+  
 }

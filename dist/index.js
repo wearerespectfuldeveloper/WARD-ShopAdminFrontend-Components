@@ -302,23 +302,36 @@ function _extends$d() { _extends$d = Object.assign || function (target) { for (v
 
 var _ref$d =
 /*#__PURE__*/
-React.createElement("text", {
-  transform: "translate(0 15)",
-  fill: "#fff",
-  fontSize: 21,
-  fontFamily: "SourceSansPro-Bold, Source Sans Pro",
-  fontWeight: 700,
-  letterSpacing: ".2em"
-}, React.createElement("tspan", {
-  x: 0,
-  y: 0
-}, ":)"));
+React.createElement("path", {
+  d: "M7.314 5.9l3.535-3.536A1 1 0 109.435.95L5.899 4.485 2.364.95A1 1 0 10.95 2.364l3.535 3.535L.95 9.435a1 1 0 101.414 1.414l3.535-3.535 3.536 3.535a1 1 0 101.414-1.414L7.314 5.899z"
+});
 
-function SvgLogoIcon(props) {
+function SvgClose(props) {
   return React.createElement("svg", _extends$d({
-    width: 25,
-    height: 21
+    viewBox: "-6 -6 24 24",
+    width: 24,
+    height: 24,
+    preserveAspectRatio: "xMinYMin",
+    className: "close_svg__jam close_svg__jam-close"
   }, props), _ref$d);
+}
+
+function _extends$e() { _extends$e = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$e.apply(this, arguments); }
+
+var _ref$e =
+/*#__PURE__*/
+React.createElement("path", {
+  d: "M6 2V1a1 1 0 011-1h4a1 1 0 011 1v1h4a2 2 0 012 2v1a2 2 0 01-2 2h-.133l-.68 10.2a3 3 0 01-2.993 2.8H5.826a3 3 0 01-2.993-2.796L2.137 7H2a2 2 0 01-2-2V4a2 2 0 012-2h4zm10 2H2v1h14V4zM4.141 7l.687 10.068a1 1 0 00.998.932h6.368a1 1 0 00.998-.934L13.862 7h-9.72zM7 8a1 1 0 011 1v7a1 1 0 01-2 0V9a1 1 0 011-1zm4 0a1 1 0 011 1v7a1 1 0 01-2 0V9a1 1 0 011-1z"
+});
+
+function SvgTrash(props) {
+  return React.createElement("svg", _extends$e({
+    viewBox: "-3 -2 24 24",
+    width: 24,
+    height: 24,
+    preserveAspectRatio: "xMinYMin",
+    className: "trash_svg__jam trash_svg__jam-trash"
+  }, props), _ref$e);
 }
 
 
@@ -338,7 +351,8 @@ var icons = /*#__PURE__*/Object.freeze({
   arrowDown: SvgArrowDown,
   arrowLeft: SvgArrowLeft,
   logo: SvgLogo,
-  logoIcon: SvgLogoIcon
+  close: SvgClose,
+  trash: SvgTrash
 });
 
 function _templateObject2() {
@@ -655,7 +669,7 @@ function _templateObject2$2() {
 }
 
 function _templateObject$3() {
-  var data = _taggedTemplateLiteral(["\n  \n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject$3 = function _templateObject() {
     return data;
@@ -692,12 +706,14 @@ var ListItem = function ListItem(_ref) {
       maxWidth: maxWidth,
       minWidth: minWidth
     }, themes$1[theme], borders[border]],
-    className: '_list-item ' + className
+    className: "_list-item " + className
+  }, jsx("div", {
+    className: "content-wrapper"
   }, jsx("div", {
     className: "content"
   }, jsx("div", {
     className: "leading"
-  }, leading), children, jsx("div", {
+  }, leading), children), jsx("div", {
     className: "trailing"
   }, trailing)));
 };
@@ -709,7 +725,7 @@ ListItem.defaultProps = {
 var ListItem$1 = React.memo(ListItem);
 
 function _templateObject5$2() {
-  var data = _taggedTemplateLiteral(["\n          font-weight: bold;\n          span {\n            color: rgba(0, 0, 0, 0.5);\n            border-radius: 14px;\n            padding: 0.3125rem 0.9375rem;\n            background-color: rgba(", ", 0.2);\n          }\n        "]);
+  var data = _taggedTemplateLiteral(["\n        font-weight: bold;\n        span {\n          color: rgba(0, 0, 0, 0.5);\n          border-radius: 14px;\n          padding: 0.3125rem 0.9375rem;\n          background-color: rgba(", ", 0.2);\n        }\n      "]);
 
   _templateObject5$2 = function _templateObject5() {
     return data;
@@ -719,7 +735,7 @@ function _templateObject5$2() {
 }
 
 function _templateObject4$2() {
-  var data = _taggedTemplateLiteral(["\n          span {\n            label {\n              cursor: pointer;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n              flex-wrap: wrap;\n              img {\n                margin: 0.875rem;\n                border: 1px solid #eee;\n                width: 3.125rem;\n                height: 3.125rem;\n              }\n            }\n          }\n        "]);
+  var data = _taggedTemplateLiteral(["\n        span {\n          label {\n            cursor: pointer;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            flex-wrap: wrap;\n            img {\n              margin: 0.875rem;\n              border: 1px solid #eee;\n              width: 3.125rem;\n              height: 3.125rem;\n            }\n          }\n        }\n      "]);
 
   _templateObject4$2 = function _templateObject4() {
     return data;
@@ -775,34 +791,39 @@ var TableRow = function TableRow(_ref) {
   RowItems = cellList.map(function (item) {
     var cellStyle;
     var element;
-    element = item.data;
 
-    switch (item.type) {
-      case "picture":
-        element = jsx("label", null, jsx("img", {
-          src: item.data[0]
-        }), item.data[1]);
-        cellStyle = css(_templateObject4$2());
-        break;
+    if (item.data === undefined || item.data === null) {
+      return type === "head" ? jsx("th", {
+        css: [cellStyle]
+      }, jsx("span", null, "-")) : jsx("td", {
+        css: [cellStyle]
+      }, jsx("span", null, "-"));
+    } else if (item.type === "picture") {
+      element = jsx("label", null, jsx("img", {
+        src: item.data.imageUrl
+      }), item.data.title);
+      cellStyle = css(_templateObject4$2());
+    } else if (item.type === "text") {
+      element = item.data;
+    } else if (item.type === "price") {
+      element = item.data + "원";
+    } else if (item.type === "date") {
+      element = item.data;
+    } else if (item.type === "stock" && item.data !== undefined && item.data !== null) {
+      var stateColor;
 
-      case "price":
-        element = item.data + "원";
-        break;
+      if (+item.data > 50) {
+        stateColor = "105, 228, 166";
+      } else if (+item.data === 0) {
+        stateColor = "255, 114, 133";
+      } else {
+        stateColor = "255, 202, 131";
+      }
 
-      case "stock":
-        var stateColor;
-
-        if (+item.data > 50) {
-          stateColor = "105, 228, 166";
-        } else if (+item.data === 0) {
-          stateColor = "255, 114, 133";
-        } else {
-          stateColor = "255, 202, 131";
-        }
-
-        element = item.data;
-        cellStyle = css(_templateObject5$2(), stateColor);
-        break;
+      element = item.data;
+      cellStyle = css(_templateObject5$2(), stateColor);
+    } else if (item.type === "extra") {
+      element = item.data;
     }
 
     return type === "head" ? jsx("th", {
@@ -1026,7 +1047,7 @@ function _templateObject6$2() {
 }
 
 function _templateObject5$3() {
-  var data = _taggedTemplateLiteral(["\n    z-index: 0;\n\n    transition: transform 0.5s ease-out;\n    * {\n      transition: opacity 0.2s;\n    }\n    transform: translateX(-110%);\n    * {\n      opacity: 0;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    z-index: 0;\n    transition: transform 0.5s ease-out;\n    * {\n      transition: opacity 0.2s;\n    }\n    transform: translateX(-110%);\n    * {\n      opacity: 0;\n    }\n  "]);
 
   _templateObject5$3 = function _templateObject5() {
     return data;
@@ -1036,7 +1057,7 @@ function _templateObject5$3() {
 }
 
 function _templateObject4$4() {
-  var data = _taggedTemplateLiteral(["\n    z-index: 0;\n    transition: width 0.5s ease-out 0.2s;\n    * {\n      transition: opacity 0.2s ease-out;\n    }\n    width: 0;\n    min-width: 0;\n    max-width: 0;\n\n    * {\n      opacity: 0;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    z-index: 0;\n    transition: all 0.5s ease-out 0.2s;\n    * {\n      transition: opacity 0.2s ease-out;\n    }\n    width: 0;\n    min-width: 0;\n\n    * {\n      opacity: 0;\n    }\n  "]);
 
   _templateObject4$4 = function _templateObject4() {
     return data;
@@ -1046,7 +1067,7 @@ function _templateObject4$4() {
 }
 
 function _templateObject3$4() {
-  var data = _taggedTemplateLiteral(["\n    z-index: 1000;\n    transition: transform 0.5s ease-out 0.2s;\n    * {\n      transition: opacity 0.2s 0.5s;\n    }\n    transform: translateX(0);\n  "]);
+  var data = _taggedTemplateLiteral(["\n    z-index: 1000;\n\n    transition: transform 0.5s ease-out 0.2s;\n    * {\n      transition: opacity 0.2s 0.5s;\n    }\n    transform: translateX(0);\n  "]);
 
   _templateObject3$4 = function _templateObject3() {
     return data;
@@ -1056,7 +1077,7 @@ function _templateObject3$4() {
 }
 
 function _templateObject2$6() {
-  var data = _taggedTemplateLiteral(["\n    z-index: 1000;\n    transition: width 0.5s ease-out;\n    * {\n      transition: opacity 0.2s ease-out 0.5s;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    z-index: 1000;\n\n    transition: all 0.5s ease-out;\n    * {\n      transition: opacity 0.2s ease-out 0.5s;\n    }\n  "]);
 
   _templateObject2$6 = function _templateObject2() {
     return data;
