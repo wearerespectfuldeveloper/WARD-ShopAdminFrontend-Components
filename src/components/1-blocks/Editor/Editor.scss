@@ -1,0 +1,15 @@
+._editor {
+  &__control-wrapper {
+
+  }
+
+  &__control-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__control-button {
+    margin: 2px 2px 0px 0px;
+  }
+}

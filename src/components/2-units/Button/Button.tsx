@@ -26,9 +26,6 @@ type ButtonProps = {
   className?: string;
 };
 
-const style = css`
-  
-`;
 
 const themes = {
   primary: css`
@@ -137,7 +134,6 @@ const Button = ({
   return (
     <button
       css={[
-        style,
         themes[theme],
         sizes[size],
         { width, maxWidth, minWidth },

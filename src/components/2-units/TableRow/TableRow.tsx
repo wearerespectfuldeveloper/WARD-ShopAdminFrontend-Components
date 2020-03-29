@@ -21,8 +21,10 @@ type TableRowProps = {
     | { type: "date"; data: string | number | undefined }
     | { type: "extra"; data: React.ReactNode }
   >;
-  /* 추가적인 스타일링을 적용하기 위한 클래스 */
+  /** 추가적인 스타일링을 적용하기 위한 클래스 */
   className?: string;
+  /** 임의의 너비 */
+  width?: string;
 };
 
 const TableRow = ({ type, cellList, className }: TableRowProps) => {

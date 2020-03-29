@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import './Table.scss';
+import "./Table.scss";
 declare type TableProps = {
     /** 테이블의 내용물 */
     children: React.ReactNode;

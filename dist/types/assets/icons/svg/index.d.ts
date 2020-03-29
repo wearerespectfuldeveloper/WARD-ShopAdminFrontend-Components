@@ -13,3 +13,4 @@ export { ReactComponent as arrowLeft } from './arrowLeft.svg';
 export { ReactComponent as logo } from './logo.svg';
 export { ReactComponent as close } from './close.svg';
 export { ReactComponent as trash } from './trash.svg';
+export { ReactComponent as pencil } from './pencil.svg';

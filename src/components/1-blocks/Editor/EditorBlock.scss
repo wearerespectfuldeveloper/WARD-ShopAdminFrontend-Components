@@ -1,0 +1,7 @@
+._editor__block {
+  &__editable-area {
+    &:focus {
+      outline: none;
+    }
+  }
+}

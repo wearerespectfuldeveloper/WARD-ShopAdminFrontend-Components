@@ -2,6 +2,7 @@ import './components/2-units/Button/Button.scss';
 import './components/2-units/Input/Input.scss';
 import './components/2-units/ListItem/ListItem.scss';
 import './components/2-units/TableRow/TableRow.scss';
+import './components/2-units/ClickableIcon/ClickableIcon.scss';
 
 import './components/1-blocks/ButtonGroup/ButtonGroup.scss';
 import './components/1-blocks/Dialog/Dialog.scss';
@@ -24,6 +25,8 @@ export { default as Button } from './components/2-units/Button/Button';
 export { default as Input } from './components/2-units/Input/Input';
 export { default as ListItem } from './components/2-units/ListItem/ListItem';
 export { default as TableRow } from './components/2-units/TableRow/TableRow';
+export { default as ClickableIcon } from './components/2-units/ClickableIcon/ClickableIcon';
+
 
 // BLOCK
 export { default as ButtonGroup } from './components/1-blocks/ButtonGroup/ButtonGroup';

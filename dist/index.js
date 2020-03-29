@@ -334,6 +334,24 @@ function SvgTrash(props) {
   }, props), _ref$e);
 }
 
+function _extends$f() { _extends$f = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$f.apply(this, arguments); }
+
+var _ref$f =
+/*#__PURE__*/
+React.createElement("path", {
+  d: "M12.238 5.472L3.2 14.51l-.591 2.016 1.975-.571 9.068-9.068-1.414-1.415zM13.78 3.93l1.414 1.414 1.318-1.318a.5.5 0 000-.707l-.708-.707a.5.5 0 00-.707 0L13.781 3.93zm3.439-2.732l.707.707a2.5 2.5 0 010 3.535L5.634 17.733l-4.22 1.22a1 1 0 01-1.237-1.241l1.248-4.255 12.26-12.26a2.5 2.5 0 013.535 0z"
+});
+
+function SvgPencil(props) {
+  return React.createElement("svg", _extends$f({
+    viewBox: "-2.5 -2.5 24 24",
+    width: 24,
+    height: 24,
+    preserveAspectRatio: "xMinYMin",
+    className: "pencil_svg__jam pencil_svg__jam-pencil"
+  }, props), _ref$f);
+}
+
 
 
 var icons = /*#__PURE__*/Object.freeze({
@@ -352,7 +370,8 @@ var icons = /*#__PURE__*/Object.freeze({
   arrowLeft: SvgArrowLeft,
   logo: SvgLogo,
   close: SvgClose,
-  trash: SvgTrash
+  trash: SvgTrash,
+  pencil: SvgPencil
 });
 
 function _templateObject2() {
@@ -842,6 +861,26 @@ TableRow.defaultProps = {
   type: "body"
 };
 var TableRow$1 = React.memo(TableRow);
+
+/** @jsx jsx */
+
+var ClickableIcon = function ClickableIcon(_ref) {
+  var icon = _ref.icon,
+      size = _ref.size,
+      className = _ref.className,
+      onClick = _ref.onClick;
+  return jsx("div", {
+    className: '_clickable-icon ' + className,
+    onClick: onClick
+  }, jsx(Icon, {
+    icon: icon,
+    size: size
+  }));
+};
+
+ClickableIcon.defaultProps = {
+  icon: "settings"
+};
 
 function _templateObject2$4() {
   var data = _taggedTemplateLiteral(["\n  justify-content: flex-end;\n"]);
@@ -1347,7 +1386,7 @@ PageHeader.defaultProps = {
 };
 
 function _templateObject$c() {
-  var data = _taggedTemplateLiteral(["\n  \n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject$c = function _templateObject() {
     return data;
@@ -1365,8 +1404,10 @@ var Table = function Table(_ref) {
     css: [style$7, {
       width: width
     }],
-    className: '_table ' + className
-  }, children);
+    className: "_table " + className
+  }, jsx("div", {
+    className: "row-container"
+  }, children));
 };
 
 Table.defaultProps = {};
@@ -1390,4 +1431,4 @@ BackDrop.defaultProps = {
   backgroundColor: 'rgba(0, 0, 0, 0.3)'
 };
 
-export { BackDrop, Button$1 as Button, ButtonGroup, Card, Dialog, DropDown, Form, Icon, Input$1 as Input, ListItem$1 as ListItem, PageHeader, SideBar, Table, TableRow$1 as TableRow };
+export { BackDrop, Button$1 as Button, ButtonGroup, Card, ClickableIcon, Dialog, DropDown, Form, Icon, Input$1 as Input, ListItem$1 as ListItem, PageHeader, SideBar, Table, TableRow$1 as TableRow };

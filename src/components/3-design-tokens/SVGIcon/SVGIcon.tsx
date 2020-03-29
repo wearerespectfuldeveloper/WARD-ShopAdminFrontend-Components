@@ -44,6 +44,7 @@ const Icon = ({ icon, color, size, className, bgColor }: IconProps) => {
   `;
   return (
     <SVGIcon
+      style={{margin: '0px'}}
       css={[{ width: size, height: 'auto' }, iconColor, bg]}
       className={className}
     />

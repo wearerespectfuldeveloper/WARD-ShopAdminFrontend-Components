@@ -29,7 +29,10 @@ declare type TableRowProps = {
         type: "extra";
         data: React.ReactNode;
     }>;
+    /** 추가적인 스타일링을 적용하기 위한 클래스 */
     className?: string;
+    /** 임의의 너비 */
+    width?: string;
 };
 declare const _default: React.MemoExoticComponent<{
     ({ type, cellList, className }: TableRowProps): JSX.Element;
