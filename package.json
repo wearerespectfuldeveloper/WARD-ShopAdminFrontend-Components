@@ -1,5 +1,5 @@
 {
-  "name": "ward-react-uikit",
+  "name": "ward-uikit-react",
   "version": "1.0.0",
   "module": "dist/index.js",
   "license": "MIT",

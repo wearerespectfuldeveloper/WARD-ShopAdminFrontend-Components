@@ -6,7 +6,7 @@ on:
     branches: [develop]
 
 jobs:
-  release:
+  build:
     name: publish
     runs-on: ubuntu-latest
     steps:
@@ -16,13 +16,20 @@ jobs:
         uses: actions/setup-node@v1.4.2
         with:
           node-version: 12
-          registry-url: https://registry.npmjs.org
+          registry-url: https://registry.npmjs.org/
       # ci 서버를 위한 clean install 을 수행한다
       - run: npm install
       - run: npm run build
       - run: npm run build:types
+      - run: git config --global user.name swon3210
+      - run: git config --global user.email swon3210@gmail.com
+      - run: git add .
+      - run: git commit -m "version update"
+      # - uses: JS-DevTools/npm-publish@v1
+      #   with:
+      #     token: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: version update
-        run: npm version patch
+        run: npm version minor
       - name: publish
         run: npm publish --access public
         env:
