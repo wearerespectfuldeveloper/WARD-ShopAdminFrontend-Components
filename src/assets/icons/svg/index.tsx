@@ -17,11 +17,11 @@ export { ReactComponent as pencil } from './pencil.svg';
 
 // EditorButtons
 
-export { ReactComponent as alignCenter } from './editor/align-center.svg';
-export { ReactComponent as alignJustify } from './editor/align-justify.svg';
-export { ReactComponent as alignLeft } from './editor/align-left.svg';
-export { ReactComponent as alignRight } from './editor/align-right.svg';
-export { ReactComponent as backgroundColor } from './editor/background-color.svg';
+export { ReactComponent as alignCenter } from './editorButtons/align-center.svg';
+export { ReactComponent as alignJustify } from './editorButtons/align-justify.svg';
+export { ReactComponent as alignLeft } from './editorButtons/align-left.svg';
+export { ReactComponent as alignRight } from './editorButtons/align-right.svg';
+export { ReactComponent as backgroundColor } from './editorButtons/background-color.svg';
 export { ReactComponent as b } from './editorButtons/bold.svg';
 export { ReactComponent as color } from './editorButtons/color.svg';
 export { ReactComponent as h1 } from './editorButtons/header-1.svg';
@@ -34,32 +34,12 @@ export { ReactComponent as indent } from './editorButtons/indent.svg';
 export { ReactComponent as i } from './editorButtons/italic.svg';
 export { ReactComponent as link } from './editorButtons/link.svg';
 export { ReactComponent as orderedList } from './editorButtons/ordered-list.svg';
-export { ReactComponent as unorderedList } from './editor/unordered-list.svg';
+export { ReactComponent as unorderedList } from './editorButtons/unordered-list.svg';
 export { ReactComponent as s } from './editorButtons/strikethrough.svg';
 export { ReactComponent as u } from './editorButtons/underline.svg';
 export { ReactComponent as hr } from './editorButtons/minus.svg';
 
-
 // EditorBlock
 
-export { ReactComponent as move } from './editorBlock/move.svg.svg';
-export { ReactComponent as moreVertical } from './editorBlock/more-vertical.svg.svg';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export { ReactComponent as move } from './editorBlock/move.svg';
+export { ReactComponent as moreVertical } from './editorBlock/more-vertical.svg';

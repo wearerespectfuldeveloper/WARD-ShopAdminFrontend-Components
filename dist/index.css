@@ -127,7 +127,8 @@
         ._drop-down button:focus svg path {
           stroke: #3b86ff; }
       ._drop-down button:focus + ul {
-        display: block; }
+        display: block;
+        z-index: 700; }
     ._drop-down button span {
       margin-right: 0.5625rem; }
   ._drop-down ul {
