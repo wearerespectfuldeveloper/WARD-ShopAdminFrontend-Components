@@ -1,14 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Version Release
+name: Official Application Build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
-    branches: [release]
+    branches: [master]
   pull_request:
-    branches: [release]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,12 +21,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # 다른 사람이 만든 액션을 실행하고 싶을 때
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run pwd
-        run: pwd
-
-      # Runs a set of commands using the runners shell
+      # - uses: actions/checkout@v2
       - name: Run ls -al
         run: ls -al
