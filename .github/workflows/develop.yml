@@ -6,31 +6,24 @@ on:
     branches: [develop]
 
 jobs:
-  build:
+  release:
+    name: publish
     runs-on: ubuntu-latest
-
     steps:
-      # 소스코드를 VM 에 담는다
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: node & registry-url setup
+        uses: actions/setup-node@v1.4.2
         with:
           node-version: 12
+          registry-url: https://registry.npmjs.org
       # ci 서버를 위한 clean install 을 수행한다
-      - run: npm ci
+      - run: npm install
       - run: npm run build
       - run: npm run build:types
-      - run: npm publish
-      - name: 'context'
-
+      - name: version update
+        run: npm version patch
+      - name: publish
+        run: npm publish --access public
         env:
-          COMMIT_ID: ${{ github.sha }}
-        run: echo "Commit id => $COMMIT_ID"
-
-      - name: 'api obj'
-        env:
-          FIREBASE_API_OBJ: ${{ secrets.FIREBASE_API_OBJ }}
-        run: echo "firebase api obj => $FIREBASE_API_OBJ"
-
-      # Runs a set of commands using the runners shell
-      - name: Run ls -al
-        run: ls -al
+          NODE_AUTH_TOEKN: ${{secrets.NPM_AUTH_TOKEN}}
