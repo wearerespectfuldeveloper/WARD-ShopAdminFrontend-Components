@@ -29,6 +29,11 @@ jobs:
           COMMIT_ID: ${{ github.sha }}
         run: echo "Commit id => $COMMIT_ID"
 
+      - name: 'api obj'
+        env:
+          FIREBASE_API_OBJ: ${{ secrets.FIREBASE_API_OBJ }}
+        run: echo "firebase api obj => $FIREBASE_API_OBJ"
+
       # Runs a set of commands using the runners shell
       - name: Run ls -al
         run: ls -al
