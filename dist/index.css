@@ -1,3 +1,14 @@
+._input {
+  border: none;
+  border-bottom: 2px solid #E9E9F0;
+  padding: 9px;
+  transition: border-bottom 0.5s; }
+  ._input:disabled {
+    cursor: not-allowed; }
+  ._input:focus {
+    outline: none;
+    border-bottom: 2px solid #43425D; }
+
 ._button {
   display: flex;
   justify-content: center;
@@ -13,17 +24,6 @@
   ._button svg {
     width: 1rem;
     margin-right: 1rem; }
-
-._input {
-  border: none;
-  border-bottom: 2px solid #E9E9F0;
-  padding: 9px;
-  transition: border-bottom 0.5s; }
-  ._input:disabled {
-    cursor: not-allowed; }
-  ._input:focus {
-    outline: none;
-    border-bottom: 2px solid #43425D; }
 
 ._list-item {
   list-style: none;

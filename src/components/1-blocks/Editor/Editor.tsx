@@ -9,7 +9,7 @@ import Card from '../Card/Card';
 type EditorProps = {
   /** 기본 width */
   width?: string;
-  /* 스타일 커스터마이징 하고싶을 때 사용 */
+  /* 외부에서 클래스를 부여하고 하고싶을 때 사용합니다 */
   className?: string;
 };
 
