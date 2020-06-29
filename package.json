@@ -54,7 +54,7 @@
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:publish": "rollup -c && tsc --emitDeclarationOnly && git add . && git commit -m 'version_update' && npm version patch && npm publish",
+    "build:publish": "rollup -c && tsc --emitDeclarationOnly && git add . && git commit -m 'version_update' && npm version patch && npm publish && git push origin develop",
     "test": "jest --watchAll --verbose"
   },
   "peerDependencies": {
