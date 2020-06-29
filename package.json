@@ -1,9 +1,12 @@
 {
-  "name": "ward-uikit-react",
+  "name": "@swon3210/uikit-react",
   "version": "1.1.4",
   "module": "dist/index.js",
   "license": "MIT",
   "types": "dist/types/index.d.ts",
+  "repository": {
+    "url": "git://github.com/swon3210/uikit-react.git"
+  },
   "files": [
     "/dist"
   ],
