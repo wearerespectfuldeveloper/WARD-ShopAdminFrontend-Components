@@ -920,7 +920,7 @@ Button.defaultProps = {
 var Button$1 = React__default.memo(Button);
 
 function _templateObject$2() {
-  var data = _taggedTemplateLiteral(["\n  \n"]);
+  var data = _taggedTemplateLiteral([""]);
 
   _templateObject$2 = function _templateObject() {
     return data;
@@ -931,23 +931,18 @@ function _templateObject$2() {
 var style = css(_templateObject$2());
 
 var Input = function Input(_ref) {
-  var width = _ref.width,
-      maxWidth = _ref.maxWidth,
-      minWidth = _ref.minWidth,
-      disabled = _ref.disabled,
+  var disabled = _ref.disabled,
       inputPlaceHolder = _ref.inputPlaceHolder,
       inputType = _ref.inputType,
+      onInputFunc = _ref.onInputFunc,
       className = _ref.className;
   return jsx("input", {
     type: inputType,
-    css: [style, {
-      width: width,
-      maxWidth: maxWidth,
-      minWidth: minWidth
-    }],
+    css: [style],
     className: '_input ' + className,
     placeholder: inputPlaceHolder,
-    disabled: disabled
+    disabled: disabled,
+    onInput: onInputFunc
   });
 };
 
