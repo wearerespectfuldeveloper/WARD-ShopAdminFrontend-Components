@@ -12,13 +12,6 @@
   "module": "dist/index.js",
   "license": "MIT",
   "types": "dist/types/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/swon3210/uikit-react.git"
-  },
   "files": [
     "/dist"
   ],
